@@ -8,8 +8,23 @@
     "theme_support_url": "https://gulrugar.github.io"
   },
   {
+    "name": "Background",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "repeating_bg",
+        "label": "Repeating Background Image"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.logo.name",
     "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "t:settings_schema.logo.settings.logo_image.label"
+      },
       {
         "type": "image_picker",
         "id": "favicon",

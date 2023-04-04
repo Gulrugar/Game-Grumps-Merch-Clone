@@ -1,9 +1,145 @@
-this is header.liquid
+<div class="absolute w-full xl:-top-6 top-0 transform transition-all lg:translate-y-0 translate-y-16 ease-elastic duration-200 md:flex lg:opacity-100 justify-center hidden opacity-0">
+  <div class="grow-0 xl:w-96 w-72 relative">
+    <span style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative">
+      <span style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;padding-top:100%"></span>
+      {%- if section.settings.wide_screen_image != blank -%}
+        {%- assign wideScrImage = section.settings.wide_screen_image -%}
+        <img
+          src="{{ wideScrImage | image_url: width: 3840 }}"
+          decoding="async"
+          data-nimg="responsive"
+          style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:contain"
+          sizes="100vw"
+          srcset="
+            {{ wideScrImage | image_url: width: 640 }} 640w,
+            {{ wideScrImage | image_url: width: 750 }} 750w,
+            {{ widScrImage | image_url: width: 828 }} 828w,
+            {{ widScrImage | image_url: width: 1080 }} 1080w,
+            {{ widScrImage | image_url: width: 1200 }} 1200w,
+            {{ widScrImage | image_url: width: 1920 }} 1920w,
+            {{ widScrImage | image_url: width: 2048 }} 2048w,
+            {{ widScrImage | image_url: width: 3840 }} 3840w
+          "
+        >
+      {%- endif -%}
+    </span>
+  </div>
+</div>
+<div class="px-6 py-6 mx-auto max-w-[1248px] z-[1000] hidden sm:block">
+  <div class="relative flex flex-row justify-between items-center">
+    <a href="{{ routes.root_url }}" class="cursor-pointer rounded-full transform duration-300 ease-elastic hover:scale-110">
+      <div class="relative w-80 h-36 drop-shadow-lg">
+        <span style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative">
+          {%- if settings.logo != blank -%}
+            <span style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;padding-top:45%"></span>
+            <img
+              sizes="100vw"
+              src="{{ settings.logo | image_url: width: 3840 }}"
+              srcset="
+                {{ settings.logo | image_url: width: 640 }} 640w,
+                {{ settings.logo | image_url: width: 828 }} 828w,
+                {{ settings.logo | image_url: width: 1080 }} 1080w,
+                {{ settings.logo | image_url: width: 1200 }} 1200w,
+                {{ settings.logo | image_url: width: 1920 }} 1920w,
+                {{ settings.logo | image_url: width: 2048 }} 2048w,
+                {{ settings.logo | image_url: width: 3840 }} 3840w
+              "
+              decoding="async"
+              data-nimg="responsive"
+              style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:contain"
+            >
+          {%- else -%}
+            <span class="h2">{{ shop.name }}</span>
+          {%- endif -%}
+        </span>
+      </div>
+    </a>
+    <div>
+      <nav class="relative" data-orientation="horizontal">
+        <div style="position: relative;">
+          <ul class="flex flex-row items-center rounded-full bg-black p-2 space-x-2 shadow-lg" data-orientation="horizontal" dir="ltr">
+            <li>
+              <button 
+                id="radix-4-trigger-radix-0" 
+                class="px-3 py-2 rounded-full hover:bg-white w-full flex justify-center gap-1 items-center  text-white text-lg font-semibold hover:text-black tracking-wide focus:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-opacity-75 group"
+                data-state="closed"
+                data-radix-collection-item
+              > 
+                Explore Merch
+                {% render 'icon-caret' %}
+              </button>
+            </li>
+            <li>
+              <button 
+                id="radix-4-trigger-radix-1" 
+                class="px-3 py-2 rounded-full hover:bg-white w-full flex justify-center gap-1 items-center  text-white text-lg font-semibold hover:text-black tracking-wide focus:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-opacity-75 group"
+                data-state="closed"
+                data-radix-collection-item
+              > 
+                More
+                {% render 'icon-caret' %}
+              </button>
+            </li>
+            <li>
+              <a 
+                class="px-3 py-2 rounded-full hover:bg-white w-full flex justify-center gap-1 items-center  text-white text-lg font-semibold hover:text-black tracking-wide focus:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-opacity-75"
+                data-radix-collection-item
+              >
+                Live
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+<div class="z-[1000] sticky sm:hidden p-2 top-0 w-full" data-state="closed">
+  <nav class="flex flex-col justify-start items-center rounded-[28px] shadow-lg bg-black w-full">
+    <div class="relative flex flex-row justify-between items-center w-full px-5 py-4">
+      <a href="" class="flex items-center justify-center flex-nowrap transform ease-elastic transition-all hover:scale-[1.02] active:scale-[.98]" href="{{ routes.cart_url }}">
+        {% render 'icon-cart' %}
+      </a>
+      <a href="" class="cursor-pointer rounded-full transform duration-300 ease-elastic hover:scale-110" href="{{ routes.root_url }}">
+        {%- if settings.logo != blank -%}
+          <span style="box-sizing:border-box;display:inline-block;overflow:hidden;width:140px;height:44px;background:none;opacity:1;border:0;margin:0;padding:0;position:relative">
+            <img
+              src="{{ settings.logo | image_url: width: 384 }}"
+              srcset="
+                {{ settings.logo | image_url: width: 256 }} 1x,
+                {{ settings.logo | image_url: width: 384 }} 2x
+              "
+              decoding="async"
+              data-nimg="fixed"
+              style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:contain"
+            >
+          </span>
+        {%- else -%}
+          <span class="h2">{{ shop.name }}</span>
+        {%- endif -%}
+      </a>
+      <button class="text-white" type="button" data-state="closed">
+        {% render 'icon-hamburger' %}
+      </button>
+    </div>
+  </nav>
+</div>
 
-<div class="h0">this is div.h0</div>
-<h1>This is an h1</h1>
-<h2>This is an h2</h2>
-<h3>This is an h3</h3>
-<h4>This is an h4</h4>
-<h5>This is an h5</h5>
-<h6>This is an h6</h6>
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu",
+        "default": "main-menu",
+        "label": "Menu"
+      },
+      {
+        "type": "image_picker",
+        "id": "wide_screen_image",
+        "label": "Wide Screen Popup Image" 
+      }
+    ]
+  }
+{% endschema %}

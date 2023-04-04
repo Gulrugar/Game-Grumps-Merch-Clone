@@ -1,0 +1,261 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+  border: 0 solid #e5e5e5;
+}
+
+*, ::after, ::before {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+}
+
+/* General Styles START */
+[type="button"],
+[type="reset"],
+[type="submit"],
+button {
+  -webkit-appearance: button;
+  background-color: transparent;
+  background-image: none;
+
+}
+
+[role="button"],
+button {
+  cursor: pointer;
+}
+
+svg {
+  display: block;
+}
+/* General Styles END */
+
+/* A */
+.absolute {
+  position: absolute;
+}
+/* B */
+.bg-auto {
+  background-size: auto;
+}
+
+.bg-black {
+  background-color: rgb(0, 0, 0);
+}
+
+.bg-orange-400 {
+  background-color: rgb(251, 146, 60);
+}
+
+.bg-top {
+  background-position: top;
+}
+
+.bg-repeat-y {
+  background-repeat: repeat-y;
+}
+/* C */
+.cursor-pointer {
+  cursor: pointer;
+}
+/* D */
+.duration-200 {
+  transition-duration: .2s;
+}
+
+.duration-300 {
+  transition-duration: .3s;
+}
+/* E */
+.ease-elastic {
+  transition-timing-function: cubic-bezier(.05,.705,.51,1.155);
+}
+
+/* F */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+/* G */
+/* H */
+.h-36 {
+  height: 9rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.hover\:scale-\[1\.02\]:hover {
+  --tw-scale-x: 1.02;
+  --tw-scale-y: 1.02;
+}
+
+.hover\:scale-110:hover {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+}
+
+.hover\:scale-110:hover, .hover\:scale-\[1\.02\]:hover {
+  transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+/* I */
+.items-center {
+  align-items: center;
+}
+/* J */
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+/* K */
+/* L */
+@media screen and (min-width: 1024px) {
+  .lg\:opacity-100 {
+    opacity: 1;
+  }
+
+  .lg\:translate-y-0 {
+    --tw-translate-y: 0px;
+    transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+}
+
+/* M */
+.max-w-\[1248px\] {
+  max-width: 1248px;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .md\:flex {
+    display: flex;
+  }
+}
+/* N */
+/* O */
+/* P */
+.p-2 {
+  padding: .5rem
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Q */
+/* R */
+.relative {
+  position: relative;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.rounded-\[28px\] {
+  border-radius: 28px;
+}
+/* S */
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -4px rgba(0, 0, 0, .1);
+}
+
+.shadow-lg {
+  box-shadow: 0 0 #0000, 0 0 #0000, var(--tw-shadow);
+}
+
+@media screen and (min-width: 640px) {
+  .sm\:block {
+    display: block;
+  }
+
+  .sm\:hidden {
+    display: none;
+  }
+}
+
+.sticky {
+  position: sticky;
+}
+/* T */
+.text-white {
+  color: rgb(255, 255, 255);
+}
+
+.top-0 {
+  top: 0;
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.transition-all {
+  transition-property: all;
+  /* transition-timing-function: cubic-bezier(.4,0,.2,1); */
+  transition-duration: .15s;
+}
+/* U */
+/* V */
+/* W */
+.w-80 {
+  width: 20rem;
+}
+
+.w-full {
+  width: 100%;
+}
+/* X */
+@media screen and (min-width: 1280px) {
+  .xl\:bg-contain {
+    background-size: contain;
+  }
+
+  .xl\:-top-6 {
+    top: -1.5rem;
+  }
+}
+/* Y */
+/* Z */
+.z-\[1000\] {
+  z-index: 1000
+}

@@ -36,6 +36,9 @@
     "logo": {
       "name": "Logo",
       "settings": {
+        "logo_image": {
+          "label": "Logo"
+        },
         "favicon": {
           "label": "Favicon image",
           "info": "Will be scaled down to 32 x 32"
