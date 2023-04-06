@@ -1,10 +1,21 @@
-{
+{ 
+  "wrapper": "div.mx-auto.container.px-4",
   "sections": {
-    "main": {
-      "type": "main-index"
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "birthday-flowers"
+      }
+    },
+    "LAK-featured-collection": {
+      "type": "LAK-featured-collection",
+      "settings": {
+        "collection": "birthday-flowers"
+      }
     }
   },
   "order": [
-    "main"
+    "featured-collection",
+    "LAK-featured-collection"
   ]
 }

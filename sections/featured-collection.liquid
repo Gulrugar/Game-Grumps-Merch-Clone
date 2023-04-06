@@ -1,0 +1,33 @@
+{{ 'section-featured-collection.css' | asset_url | stylesheet_tag }}
+
+<div class="flex justify-between items-end max-h-full box-border overflow-hidden mb-2 lg:mb-3 md:mx-0 mx-4">
+  <a href="{{ section.settings.collection.url }}">
+    <p class="FeaturedCollection_subtitle__z5hsF">{{ section.settings.collection.all_products_count }} items</p>
+    <h2 class="FeaturedCollection_title__M4O_R">{{ section.settings.collection.title }}</h2>
+  </a>
+  <a href="{{ section.settings.collection.url }}">
+    <div class="FeaturedCollection_button___B9z6">
+      Shop All
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" class="inline w-4 lg:w-6"><path d="M5 12H19" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 5L19 12L12 19" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </div>
+  </a>
+</div>
+<div class="grid gap-2 sm:gap-4 md:px-0 px-4 pb-4 items-stretch grid-cols-2 md:grid-cols-4 grid-rows-2 md:grid-rows-1">
+  {%- for product in section.settings.collection.products limit: 4 -%}
+    {% render 'card-product', card_product: product %}
+  {%- endfor -%}
+</div>
+
+{% schema %}
+  {
+    "name": "Featured Collection",
+    "class": "mb-4",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      }
+    ]
+  }
+{% endschema %}

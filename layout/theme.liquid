@@ -124,7 +124,9 @@
       }
     {% endstyle %}
 
+
     {{ 'application.css' | asset_url | stylesheet_tag }}
+    {{ 'additional-styles.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -144,7 +146,7 @@
   <body class="bg-orange-400 bg-repeat-y xl:bg-contain bg-auto bg-top relative">
     {% sections 'header-group' %}
 
-    <main id="MainContent" role="main" tabindex="-1">
+    <main id="MainContent" role="main" tabindex="-1" class="rounded-t-[56px] fit pt-8 pb-16 overflow-clip bg-white relative">
       {{ content_for_layout }}
     </main>
 

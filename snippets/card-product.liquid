@@ -1,0 +1,43 @@
+<div class="ProductCard_root__HqXTt snap-center">
+  <div class="absolute h-16 w-16 top-0 right-0 z-10"></div>
+  <a href="{{ card_product.url }}">
+    <div class="ProductCard_imageContainer__G6HoR">
+      <div>
+        <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: relative;">
+          <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 100% 0px 0px;"></span>
+          card product
+          <img
+            class="ProductCard_productImage__nbfNy"
+            alt="{{ card_product.featured_image.alt }}"
+            sizes="100vw"
+            srcset="
+              {{ card_product.featured_image | image_url: width: 640 }} 640w,
+              {{ card_product.featured_image | image_url: width: 750 }} 750w,
+              {{ card_product.featured_image | image_url: width: 828 }} 828w,
+              {{ card_product.featured_image | image_url: width: 1080 }} 1080w,
+              {{ card_product.featured_image | image_url: width: 1200 }} 1200w,
+              {{ card_product.featured_image | image_url: width: 1920 }} 1920w,
+              {{ card_product.featured_image | image_url: width: 2048 }} 2048w, 
+              {{ card_product.featured_image | image_url: width: 3840 }} 3840w
+             "
+             decoding="async"
+             data-nimg="responsive"
+             style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          >
+        </span>
+      </div>
+    </div>
+    <div class="ProductTag_root__Nxivt border-t text-base p-2">
+      <h3 class="ProductTag_name__C_niq">
+        <span style="-webkit-line-clamp: 2;">
+          {{ card_product.title }}
+        </span>
+      </h3>
+      <div class="flex gap-2 w-full">
+        <span class="ProductTag_price__RDK06 pt-2 w-full text-subtle">
+          {{ card_product.price | money_with_currency }}
+        </span>
+      </div>
+    </div>
+  </a>
+</div>

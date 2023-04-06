@@ -1,0 +1,58 @@
+<div class="paginated-products__product" style="width: 22.5%; flex-shrink: 0;">
+  <div class="products-list-card products-list-card--featured">
+    <a href="{{ card_product.url }}" class="products-list-card__photo-link">
+      <div class="products-list-cart__photo">
+        <span class="parent-lazy-load parent-lazy-load--visible products-list-card__photo__lazyload parent-lazy-load-image">
+          <img
+            class="image parent-lazy-load-image__image"
+            src="{{ card_product.featured_image | image_url: width: 340 }}"
+            alt="{{ card_product.featured_image.alt }}"
+            loading="lazy"
+          >
+        </span>
+      </div>
+    </a>
+    <a href="{{ card_product.url }}" class="products-list-card__details-link">
+      <div class="products-list-card__placeholder">
+        <div class="products-list-card__details">
+          <div class="products-list-card__name-and-brand">
+            <span class="products-list-card__name">{{ card_product.title }}</span>
+            <span class="products-list-card__brand">{{ card_product.vendor }}</span>
+          </div>
+        </div>
+      </div>
+    </a>
+    <ul class="products-list-card__actions">
+      <li class="products-list-card__actions__option-selector products-list-card__actions__action">
+        <span class="products-list-card__options">
+          <div class="dropdown dropdown--disabled dropdown-selector dropdown-selector--single-option products-list-card__option-selector">
+            <a class="dropdown__trigger dropdown-selector__trigger">
+              <span class="products-list-card__option">
+                <div class="products-list-card__options-pricing">
+                  {%- if card_product.compare_at_price >  card_product.price -%}
+                    <span class="price__price price__sales-price price__sales-price--color">
+                      {{ card_product.price | money }}
+                    </span>
+                    <span class="price__price price__with-sales-price strikethrough">
+                      {{ card_product.compare_at_price | money }}
+                    </span>
+                  {%- else -%}
+                    <span class="price__price price__sales-price price__sales-price--color">
+                      {{ card_product.price | money }}
+                    </span>
+                  {%- endif -%}
+                </div>
+              </span>
+            </a>
+          </div>
+        </span>
+      </li>
+      <li class="products-list-card__actions__add-remove-cart products-list-card__actions__action">
+        <button class="products-list-card__add-to-cart button white success" type="button">Add to cart</button>
+      </li>
+    </ul>
+    <span class="badge products-list-card__badge">
+      
+    </span>
+  </div>
+</div>
