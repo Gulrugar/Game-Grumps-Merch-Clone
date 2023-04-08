@@ -1,1 +1,80 @@
-this is footer.liquid
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+
+<footer id="site-footer" style="padding-bottom: 100px;">
+  <div>
+    <div id="mc_embed_signup">
+      {%- form 'customer', class: "validate" -%}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <div id="mc_embed_signup_scroll">
+          <h2 class="text-2xl font-bold text-white mb-4">
+            Join Our Mailing List!
+          </h2>
+          <h3 class="text-lg font-bold mb-4">
+            Sign up here for totally amazing updates about Game Grumps!
+          </h3>
+          <div class="mc-field-group">
+            <input
+              type="email"
+              id="mce-EMAIL"
+              class="required email"
+              name="contact[email]"
+              value="{{ form.email }}"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="email"
+              placeholder="Email Address"
+              required
+            >
+            <input id="mc-embedded-subscribe" class="button px-6 py-2 rounded-full font-semibold text-white" type="submit" name="subscribe" value="Subscribe">
+          </div>
+          <div id="mce-responses">
+            {%- if form.errors -%}
+              <div id="mce-error-response" class="response">
+                <small>
+                  {{- form.errors.translated_fields.email | capitlalize }}
+                  {{ form.errors.message.email -}}
+                </small>
+              </div>
+            {%- endif -%}
+            {%- if form.posted_successfully? -%}
+              <div id="mce-success-response" class="reponse">
+                <small>
+                  Success!
+                </small>
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endform -%}
+    </div>
+    <div class="social-links">
+      <ul>
+        {%- if settings.social_youtube_link != blank -%}
+          <li>
+            <a href="{{ settings.social_youtube_link }}" class="youtube" target="_blank" rel="noreferrer">Youtube</a>
+          </li>
+        {%- endif -%}
+        {%- if settings.social_twitter_link != blank -%}
+          <li>
+            <a href="{{ settings.social_twitter_link }}" class="twitter" target="_blank" rel="noreferrer">Twitter</a>
+          </li>
+        {%- endif -%}
+        {%- if settings.social_facebook_link != blank -%}
+          <li>
+            <a href="{{ settings.social_facebook_link }}" class="facebook" target="_blank" rel="noreferrer">Facebook</a>
+          </li>
+        {%- endif -%}
+        {%- if settings.social_instagram_link != blank -%}
+          <li>
+            <a href="{{ settings.instagram_link }}" class="instagram" target="_blank" rel="noreferrer">Instagram</a>
+          </li>
+        {%- endif -%}
+      </ul>
+    </div>
+    <a href="https://gamegrumps.com">
+      <p class="signature">Game Grumps: The Website</p>
+    </a>
+    <a href="{{ pages['privacy-policy'].url }}" class="footer-link">Privacy Policy</a>
+    <a href="{{ pages['testing-row-content-from-page'].url }}" class="footer-link">F.A.Q.</a>
+  </div>
+</footer>

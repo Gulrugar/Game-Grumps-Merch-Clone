@@ -1,4 +1,5 @@
 <script src="{{ 'header.js' | asset_url}}" defer="defer"></script>
+{{ 'section-header.css' | asset_url | stylesheet_tag }}
 
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
@@ -157,6 +158,9 @@
             </li>
           </ul>
         </div>
+        <div class="absolute flex origin-top justify-end" style="top: 90%; width: 310%;left: -210%;">
+          hello world
+        </div>
       </nav>
     </div>
   </div>
@@ -189,7 +193,10 @@
         {% render 'icon-hamburger' %}
       </button>
     </div>
-    <div id="radix-3" class="w-full overflow-hidden radix-state-open:animate-[collapsible-open-content_0.3s_cubic-bezier(0.050,0.705,0.510,1.155)] radix-state-closed:animate-[collapsible-close-content_0.3s_cubic-bezier(0.050,0.705,0.510,1.155)]" data-state="closed" style="--radix-collapsible-content-height: 560px; --radix-collapsible-content-width: 417px;" hidden>
+    <div id="radix-3" class="w-full overflow-hidden radix-state-open:animate-[collapsible-open-content_0.3s_cubic-bezier(0.050,0.705,0.510,1.155)] radix-state-closed:animate-[collapsible-close-content_0.3s_cubic-bezier(0.050,0.705,0.510,1.155)]" data-state="closed" style="--radix-collapsible-content-height: 560px; --radix-collapsible-content-width: 417px;">
+      {% comment %}
+        add the hidden attribute to the above class to toggle the header mobile menu
+      {% endcomment %}
       <div class="px-5">
         <div class="bg-gray-800 rounded-full h-[2px] w-full">
         </div>

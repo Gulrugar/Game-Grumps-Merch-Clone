@@ -7,9 +7,20 @@
   background: #999;
   cursor: pointer;
   display: inline-block;
+  font-size: 18px;
   text-align: center;
   padding: 11px 20px 12px;
   transition: background-color .2s linear;
+}
+
+.icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  vertical-align: -10%;
 }
 /* priority END */
 
@@ -94,16 +105,6 @@
 .icon-chevron {
   width: .986328125em;
 }
-
-.icon {
-  display: inline-block;
-  height: 1em;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-  vertical-align: -10%;
-}
-
 /* button.pagination-controls__next button small white */
 
 /* svg.icon.icon-chevron */
@@ -129,7 +130,9 @@
 /* div.product-category-quick-view__scroll */
 .product-category-quick-view__scroll {
   white-space: nowrap;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding-bottom: 25px;
 }
 
 /* div.paginated-products.paginated-products--card-grid.paginated-products--single-row */
@@ -188,16 +191,6 @@
 .parent-lazy-load-image__image {
   display: block;
   width: 100%;
-}
-
-.image {
-  opacity: 0;
-  transition: opacity .5s;
-}
-
-.image--loaded {
-  opacity: 1;
-  filter: none;
 }
 
 /* a.products-list-card__details-link */
@@ -329,4 +322,50 @@
 .button.white.success:hover {
   background-color: #56be92;
   color: #fff;
+}
+
+.products-list-card__badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 2px;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: rgba(0,0,0,.25) 0 1px 2px;
+  letter-spacing: 1px;
+  background: #d2bba2;
+  background-image: linear-gradient(to right,rgba(0,0,0,.05),rgba(0,0,0,0) 25%,rgba(0,0,0,0) 75%,rgba(0,0,0,.05));
+  color: #fff;
+}
+
+.badge__text {
+  margin-left: 5px;
+}
+
+.products-list-card__on-sale-and-featured {
+  top: 25px;
+}
+
+.badge__on-sale {
+  background: #d71b5d;
+}
+
+.product-category-quick-view__scroll__view-all {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  padding: 25px;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  background: #efefef;
+}
+
+.button.white.primary {
+  color: #7154a0;
 }

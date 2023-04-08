@@ -1,0 +1,122 @@
+/* footer#site-footer */
+#site-footer {
+  position: relative;
+  padding: 2.5em 0;
+  background: #141415;
+  color: #fff;
+  z-index: 100;
+}
+
+#site-footer::before {
+  content: " ";
+  display: block;
+  background: url('./footer-border.svg') 50% no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: -32px;
+  height: 33px;
+  width: 100%;
+  left: 0;
+}
+
+#mc_embed_signup_scroll,
+.footer-link {
+  text-align: center;
+}
+
+#mc_embed_signup_scroll h3 {
+  color: #bdbdc3;
+}
+
+.mc-field-group .email {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  font-size: 1.25rem;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #646464;
+  color: #fff;
+  background-color: #282828;
+  width: 100%;
+  max-width: 360px;
+}
+
+#mc-embedded-subscribe {
+  display: block;
+  background-color: #3b434b;
+  margin: 1em auto 2em;
+  font-size: 1.25rem;
+  border-radius: 9999px;
+}
+
+#site-footer .social-links {
+  background: url('./footer-bg.svg') 50% no-repeat;
+  min-height: 105px;
+  text-align: center;
+  position: relative;
+}
+
+#site-footer .social-links ul {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 60%;
+  transform: translateY(-50%) rotate(-10deg);
+}
+
+#site-footer .social-links li {
+  display: inline-block;
+  transform: rotate(10deg);
+  margin: 0 5px;
+}
+
+#site-footer .social-links li a {
+  text-indent: -1000px;
+  overflow: hidden;
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  background: #fff url('./youtube.svg') 50% no-repeat;
+  display: block;
+  transition: transform .25s ease;
+}
+
+#site-footer .social-links li a:hover {
+  transform: scale(1.3);
+}
+
+#site-footer .social-links li a.twitter {
+  background-image: url('./twitter.svg');
+}
+
+#site-footer .social-links li a.facebook {
+  background-image: url('./facebook.svg');
+}
+
+#site-footer .social-links li a.instagram {
+  background-image: url('./instagram.svg');
+}
+
+#site-footer .signature {
+  font-weight: 500;
+  font-size: 23px;
+  color: #c4c4cb;
+  letter-spacing: .45px;
+  text-align: center;
+  text-shadow: 2px 2px 0 #000;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.footer-link {
+  font-size: 18px;
+  color: #bdbdc3;
+  letter-spacing: .48px;
+  display: block;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 10px auto 0;
+}

@@ -48,11 +48,19 @@
         </span>
       </li>
       <li class="products-list-card__actions__add-remove-cart products-list-card__actions__action">
-        <button class="products-list-card__add-to-cart button white success" type="button">Add to cart</button>
+        {%- assign card_product_id = card_product.first_available_variant.id -%}
+        <button id="SubmitBtn-{{ card_product_id }}-{{ card_product_index }}" class="products-list-card__add-to-cart button white success" type="button" data-id="{{ card_product_id }}">Add to cart</button>
       </li>
     </ul>
     <span class="badge products-list-card__badge">
-      
+      <svg class="icon icon-star badge__icon"><use xlink:href="#icon-star"></use></svg>
+      <span class="badge__text">Featured</span>
     </span>
+    {%- if card_product.compare_at_price > card_product.price -%}
+      <span class="badge badge__on-sale products-list-card__badge products-list-card__on-sale-and-featured">
+        <svg class="icon icon-tag badge__icon"><use xlink:href="#icon-tag"></use></svg>
+        <span class="badge__text">On Sale</span>
+      </span>
+    {%- endif -%}
   </div>
 </div>

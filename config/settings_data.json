@@ -15,7 +15,10 @@
     "body_scale": 100,
     "page_width": 1200,
     "spacing_sections": 0,
-    "social_twitter_link": ""
+    "social_facebook_link": "https://facebook.com",
+    "social_instagram_link": "https://instagram.com",
+    "social_twitter_link": "https://twitter.com",
+    "social_youtube_link": "https://youtube.com"
   },
   "presets": {
     "Default": {
@@ -32,7 +35,10 @@
       "body_scale": 100,
       "page_width": 1200,
       "spacing_sections": 0,
-      "social_twitter_link": ""
+      "social_facebook_link": "",
+      "social_instagram_link": "",
+      "social_twitter_link": "",
+      "social_youtube_link": ""
     }
   }
 }

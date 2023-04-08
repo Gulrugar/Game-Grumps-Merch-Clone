@@ -1,47 +1,43 @@
-{{ 'section-LAK-featured-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-LAK-featured-collection.css' | asset_url | stylesheet_tag }}
 
-<div class="products-list__primary-categories">
-  <div class="product-category-quick-view product-category-quick-view--card-grid">
-    <div class="product-category-quick-view__info">
-      <h2 class="product-category-quick-view__name">
-        {{ section.settings.collection.title }}
-        <button class="product-category-quick-view__link button primary small" type="button" onclick="window.location.href = '{{ section.settings.collection.url }}'">
-          View All ({{ section.settings.collection.all_products_count | default: 0 }})
-        </button>
-      </h2>
-      <div class="pagination-controls product-category-quick-view__pagination-controls">
-        <button class="pagination-controls__previous button small white" type="button" disabled>
-          <svg class="icon icon-chevron " style="transform: rotateZ(90deg);"><use xlink:href="#icon-chevron"></use></svg>
-        </button>
-        <button class="pagination-controls__next button small white" type="button">
-          <svg class="icon icon-chevron " style="transform: rotateZ(-90deg);"><use xlink:href="#icon-chevron"></use></svg>
-        </button>
-      </div>
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'component-LAK-card-product.js' | asset_url }}" defer="defer"></script>
+
+
+<featured-collection class="product-category-quick-view product-category-quick-view--card-grid">
+  <div class="product-category-quick-view__info">
+    <h2 class="product-category-quick-view__name">
+      {{ section.settings.collection.title }}
+      <button class="product-category-quick-view__link button primary small" type="button" onclick="window.location.href = '{{ section.settings.collection.url }}'">
+        View All ({{ section.settings.collection.all_products_count | default: 0 }})
+      </button>
+    </h2>
+    <div class="pagination-controls product-category-quick-view__pagination-controls">
+      <button class="pagination-controls__previous button small white" type="button">
+        <svg class="icon icon-chevron " style="transform: rotateZ(90deg);"><use xlink:href="#icon-chevron"></use></svg>
+      </button>
+      <button class="pagination-controls__next button small white" type="button">
+        <svg class="icon icon-chevron " style="transform: rotateZ(-90deg);"><use xlink:href="#icon-chevron"></use></svg>
+      </button>
     </div>
-    <div class="product-category-quick-view__scroll-area">
-      <div class="product-category-quick-view__scroll">
-        <div class="paginated-products paginated-products--card-grid paginated-products--single-row">
-          <div class="paginated-products__products" style="display: flex; align-content: stretch; flex-flow: row nowrap;">
-            {%- for product in section.settings.collection.products limit: 15 -%}
-              {% render 'LAK-card-product', card_product: product %}
-            {%- endfor -%}
+  </div>
+  <div class="product-category-quick-view__scroll-area">
+    <div class="product-category-quick-view__scroll">
+      <div class="paginated-products paginated-products--card-grid paginated-products--single-row">
+        <div class="paginated-products__products" style="display: flex; align-content: stretch; flex-flow: row nowrap;">
+          {%- for product in section.settings.collection.products limit: 15 -%}
+            {% render 'LAK-card-product', card_product: product, card_product_index: forloop.index %}
+          {%- endfor -%}
+          <div class="product-category-quick-view__scroll__view-all">
+            <button class="button primary white" type="button" onclick="window.location = '{{ section.settings.collection.url }}'">
+              View All ({{ section.settings.collection.all_products_count | default: 0 }})
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <div class="product-category-quick-view__scrollbar">
-      
-    </div>
   </div>
-</div>
-
-<script>
-  Array.from(document.querySelectorAll('.parent-lazy-load-image__image')).forEach(element => {
-    element.addEventListener('load', () => {
-      element.classList.add('image--loaded')
-    })
-  })
-</script>
+</featured-collection>
 
 {% schema %}
   {
