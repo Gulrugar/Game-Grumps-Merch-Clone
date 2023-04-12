@@ -1,6 +1,14 @@
 { 
   "wrapper": "div.mx-auto.container.px-4",
   "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "settings": {
+        "image_desktop": "shopify:\/\/shop_images\/1677610132-rpgsbannerw3_default.webp",
+        "image_mobile": "shopify:\/\/shop_images\/1677610138-rpgsbannerw3_mobile.webp",
+        "url": "https://youtube.com"
+      }
+    },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
@@ -15,6 +23,7 @@
     }
   },
   "order": [
+    "image_banner",
     "featured-collection",
     "LAK-featured-collection"
   ]

@@ -1,0 +1,76 @@
+{{ 'component-image-banner.css' | asset_url | stylesheet_tag }}
+
+
+<div class="relative flex-scroll overflow-hidden px-4 pb-4 md:px-0">
+  <div class="keen-slider rounded-2xl transform webkit-border">
+    <div class="keen-slider__slide">
+      <a href="{{ section.settings.url  }}" class="FeaturedSlider_root__R_R0C">
+        <div class="FeaturedSlider_imageContainer__D_WkQ md:hidden">
+          <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: relative;">
+            <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: {{ 1 | divided_by: section.settings.image_mobile.aspect_ratio | times: 100 }}% 0px 0px;"></span>
+            <img
+              class="FeaturedSlider_collectionImage__nUwHP"
+              alt="{{ section.settings.image_mobile.alt }}"
+              src="{{ section.settings.image_mobile | image_url: width: 1200 }}"
+              decoding="async"
+              style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              sizes="100vw"
+              srcset="
+              {{ section.settings.image_mobile | image_url: width: 640 }} 640w,
+              {{ section.settings.image_mobile | image_url: width: 750 }} 750w,
+              {{ section.settings.image_mobile | image_url: width: 828 }} 828w,
+              {{ section.settings.image_mobile | image_url: width: 1080 }} 1080w,
+              {{ section.settings.image_mobile | image_url: width: 1200 }} 1200w
+              "
+            >
+          </span>
+        </div>
+        <div class="FeaturedSlider_imageContainer__D_WkQ hidden md:block">
+          <span style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative">
+            <span style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;padding-top:21.91780821917808%"></span>
+            <img
+              class="FeaturedSlider_collectionImage__nUwHP"
+              alt="{{ section.settings.image_desktop.alt }}"
+              src="{{ section.settings.image_desktop | image_url: width: 1200 }}"
+              decoding="async"
+              style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
+              sizes="100vw"
+              srcset="
+              {{ section.settings.image_desktop | image_url: width: 640 }} 640w,
+              {{ section.settings.image_desktop | image_url: width: 750 }} 750w,
+              {{ section.settings.image_desktop | image_url: width: 828 }} 828w,
+              {{ section.settings.image_desktop | image_url: width: 1080 }} 1080w,
+              {{ section.settings.image_desktop | image_url: width: 1200 }} 1200w
+              "
+            >
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Image Banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Banner Image desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Banner Image mobile"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "Url",
+        "default": "/"
+      }
+    ]
+  }
+{% endschema %}

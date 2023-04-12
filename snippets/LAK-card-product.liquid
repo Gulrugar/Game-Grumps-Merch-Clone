@@ -4,20 +4,21 @@
       <div class="products-list-cart__photo">
         <span class="parent-lazy-load parent-lazy-load--visible products-list-card__photo__lazyload parent-lazy-load-image">
           <img
-            class="image parent-lazy-load-image__image"
+            class="image parent-lazy-load-image__image transform ease-elastic transition-all hover:scale-[1.0625]"
             src="{{ card_product.featured_image | image_url: width: 340 }}"
             alt="{{ card_product.featured_image.alt }}"
             loading="lazy"
+            style="transition-duration: .5s"
           >
         </span>
       </div>
     </a>
-    <a href="{{ card_product.url }}" class="products-list-card__details-link">
+    <a href="{{ card_product.url }}" class="products-list-card__details-link"
+    title="{{ card_product.title }}">
       <div class="products-list-card__placeholder">
         <div class="products-list-card__details">
           <div class="products-list-card__name-and-brand">
-            <span class="products-list-card__name">{{ card_product.title }}</span>
-            <span class="products-list-card__brand">{{ card_product.vendor }}</span>
+            <span class="products-list-card__name">{{ card_product.title | truncate: 30 }}</span>
           </div>
         </div>
       </div>

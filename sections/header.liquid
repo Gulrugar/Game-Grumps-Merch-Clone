@@ -158,8 +158,122 @@
             </li>
           </ul>
         </div>
-        <div class="absolute flex origin-top justify-end" style="top: 90%; width: 310%;left: -210%;">
-          hello world
+        <div id="headerHoverMenuDesktop1" class="absolute flex origin-top justify-end z-[1001]" style="top: 110%; width: 310%; left: -110%; display:none;">
+          <div
+            data-state="open" data-orientation="horizontal" class=""
+            class="relative origin-top top-[13px] shadow-lg rounded-xl bg-black overflow-hidden z-50
+            transition-[width_height_transform] duration-300 ease-elastic-soft"
+          >
+            <div
+              id="radix-4-content-radix-0"
+              aria-labelledby="radix-4-trigger-radix-0"  
+              data-orientation="horizontal"
+              class="bg-black absolute w-auto top-0 left-0 rounded-lg"
+              dir="ltr"
+            >
+              <div class="p-5 w-min">
+                <div class="gap-4 flex flex-row">
+                  <div class="rounded-md space-y-2 w-min">
+                    <h5 class="text-sm font-semibold text-gray-500 block w-56 cursor-default">Shop by Collection</h5>
+                    <a href="{{ routes.search_url }}" class="cursor-pointer transition duration-200 block group bg-gray-700 rounded-xl focus:outline-none focus-visible:ring focus-visibel:ring-white focus-visible:ring-opacity-75 active:scale-[98%] active:ease-elastic aspect-[7/3] w-56 border-orange-500 bg-orange-500/20 border-2 hover:bg-orange-500">
+                      {% render 'grumps-logo-orange' %}
+                    </a>
+                    <a class="cursor-pointer transition duration-200 block group bg-gray-700 rounded-xl focus:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-opacity-75 active:scale-[98%] active:ease-elastic w-full max-w-[296px] aspect-[7/3] border-[#D40066] bg-pink-500/20 border-2 hover:bg-[#D40066]" href="#">
+                      {% render 'grumps-logo-red-mobile' %}
+                    </a>
+                    <a href="#" class="cursor-pointer transition duration-200 block group bg-gray-700 rounded-xl focus:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-opacity-75 active:scale-[98%] active:ease-elastic aspect-[7/3] w-56 overflow-clip relative bg-blue-500/20 hover:bg-blue-500">
+                      <div class="h-0 w-0 absolute transition-all duration-300 ease-in-out border-2 border-r-0 border-b-0 border-black border-r-white border-b-white group-hover:border-[24px] sm:group-hover:border-[16px] group-hover:border-r-[24px] sm:group-hover:border-r-[16px] group-hover:border-b-[24px] sm:group-hover:border-b-[16px] rounded-br-none group-hover:rounded-br-xl"></div>
+                      <div class="w-full h-full overflow-clip rounded-xl border-blue-500 border-2">
+                        {% render 'grumps-logo-blue' %}
+                      </div>
+                    </a>
+                  </div>
+                  <div class="bg-gray-800 rounded-full w-[2px]"></div>
+                  <div class="grow">
+                    <h5 class="text-sm font-semibold mb-1 text-gray-500 block cursor default">Shop by Category</h5>
+                    <div class="gap-x-8 gap-y-2 grid grid-flow-col max-h-72 grid-rows-2 w-max pr-4">
+                      <div>
+                        <a href="{{ collections['apparel'].url }}" class="text-white font-bold text-lg hover:underline block whitespace-nowrap tracking-wide">
+                          {% render 'icon-apparel' %}
+                          <span class="align-middle">Apparel</span>
+                        </a>
+                        <ul class="text-base">
+                          <li>
+                            <a class="text-white font-bold hover:underline block whitespace-nowrap tracking-wide" href="{{ collections['t-shirts'].url }}">T-Shirts</a>
+                          </li>
+                          <li>
+                            <a class="text-white font-bold hover:underline block whitespace-nowrap tracking-wide" href="{{ collections['hats'].url }}">Hats</a>
+                          </li>
+                          <li>
+                            <a class="text-white font-bold hover:underline block whitespace-nowrap tracking-wide" href="{{ collections['socks'].url }}">Socks</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <a class="text-white font-bold text-lg hover:underline block whitespace-nowrap tracking-wide" href="{{ routes.search_url }}">
+                          {% render 'icon-accessories' %}
+                          <span class="align-middle">Accessories</span>
+                        </a>
+                        <ul class="text-base">
+                          <li>
+                            <a class="text-white font-bold hover:underline block whitespace-nowrap tracking-wide" href="{{ collections['pins'].url }}">Pins</a>
+                          </li>
+                          <li>
+                            <a class="text-white font-bold hover:underline block whitespace-nowrap tracking-wide" href="{{ collections['keychains'].url }}">Keychains</a>
+                          </li>
+                          <li>
+                            <a class="text-white font-bold hover:underline block whitespace-nowrap tracking-wide" href="{{ collections['drinkware'].url }}">Drinkware</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="">
+                        <a class="text-white font-bold text-lg hover:underline block whitespace-nowrap tracking-wide" href="{{ collections['miscellaneous'].url }}"> 
+                          {% render 'icon-miscellaneous' %}
+                          <span class="align-middle">Miscellaneous</span>
+                        </a>
+                        <ul class="text-base">
+                          <li>
+                            <a class="text-white font-bold hover:underline block whitespace-nowrap tracking-wide">
+                              Books
+                            </a>
+                          </li>
+                          <li>
+                            <a class="text-white font-bold hover:underline block whitespace-nowrap tracking-wide">Stationery</a>
+                          </li>
+                          <li>
+                            <a class="text-white font-bold hover:underline block whitespace-nowrap tracking-wide" href="{{ collections['posters'].url }}">Posters</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="headerHoverMenuDesktop2" class="absolute flex origin-top justify-end z-[1001]" style="top: 90%; width: 310%; left: -310%; display: none;">
+          <div
+            data-state="open" data-orientation="horizontal" class="relative origin-top top-[13px] shadow-lg rounded-xl bg-black overflow-hidden z-50 transition-[width_height_transform] duration-300 ease-elastic-soft"
+            style="width: 240px; height: 256px;"
+          >
+            <div
+              id="radix-4-content-radix-1"
+              aria-labelledby="radix-4-trigger-radix-1"
+              data-orientation="horizontal"
+              class="bg-black absolute w-auto top-0 left-0 rounded-lg"
+              dir="ltr"
+            >
+              <div class="w-60 p-3">
+                <div class="w-full flex flex-col space-y-2">
+                  <a class="w-full px-4 py-3 hover:bg-white rounded-md text-white text-lg font-semibold hover:text-black tracking-wide focus:outline-none focus-visible:ring focus-visibel:ring-white focus-visible:ring-opacity-75" href="{{ routes.root_url }}">Home</a>
+                  <a class="w-full px-4 py-3 hover:bg-white rounded-md text-white text-lg font-semibold hover:text-black tracking-wide focus:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-opacity-75">About</a>
+                  <a class="w-full px-4 py-3 hover:bg-white rounded-md text-white text-lg font-semibold hover:text-black tracking-wide focus:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-opacity-75">Game Development</a>
+                  <a class="w-full px-4 py-3 hover:bg-white rounded-md text-white text-lg font-semibold hover:text-black tracking-wide focus:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-opacity-75" href="{{ blogs['news'].url }}">Blog</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </nav>
     </div>
@@ -193,10 +307,7 @@
         {% render 'icon-hamburger' %}
       </button>
     </div>
-    <div id="radix-3" class="w-full overflow-hidden radix-state-open:animate-[collapsible-open-content_0.3s_cubic-bezier(0.050,0.705,0.510,1.155)] radix-state-closed:animate-[collapsible-close-content_0.3s_cubic-bezier(0.050,0.705,0.510,1.155)]" data-state="closed" style="--radix-collapsible-content-height: 560px; --radix-collapsible-content-width: 417px;">
-      {% comment %}
-        add the hidden attribute to the above class to toggle the header mobile menu
-      {% endcomment %}
+    <div id="radix-3" class="w-full overflow-hidden radix-state-open:animate-[collapsible-open-content_0.3s_cubic-bezier(0.050,0.705,0.510,1.155)] radix-state-closed:animate-[collapsible-close-content_0.3s_cubic-bezier(0.050,0.705,0.510,1.155)]" data-state="closed" style="--radix-collapsible-content-height: 560px; --radix-collapsible-content-width: 417px;" hidden>
       <div class="px-5">
         <div class="bg-gray-800 rounded-full h-[2px] w-full">
         </div>
@@ -206,7 +317,7 @@
           <div class="w-full mb-4">
             <div class="overflow-hidden">
               <h3 data-state="closed">
-                <button id="radix-72" class="group w-full flex justify-between items-ceener text-white py-4" type="butotn" data-state="closed" data-radix-collection-item>
+                <button id="radix-72" class="group w-full flex justify-between items-center text-white py-4" type="button" data-state="closed" data-radix-collection-item>
                   <h3 class="text-xl font-bold truncate tracking-wide">
                     {% render 'icon-apparel' %}
                     <span>Apparel</span>
@@ -249,7 +360,7 @@
               {% render 'grumps-logo-red' %}
             </a>
             <a class="cursor-pointer transition duration-200 block group bg-gray-700 rounded-xl focus:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-opacity-75 active:scale-[98%] active:ease-elastic w-full max-w-[296px] aspect-[7/3] overflow-clip relative bg-blue-500/20 hover:bg-blue-500" href="#">
-              <div class="h-0 absolute transition-all duration-300 ease-in-out border:border-b-[16px] rounded-br-none group-hover:rounded-br-xl"></div>
+              <div class="h-0 w-0 absolute transition-all duration-300 ease-in-out border-2 border-r-0 border-b-0 border-black border-r-white border-b-white group-hover:border-[24px] sm:group-hover:border-[16px] group-hover:border-r-[24px] sm:group-hover:border-r-[16px] group-hover:border-b-[24px] sm:group-hover:border-b-[16px] rounded-br-none group-hover:rounded-br-xl"></div>
               <div class="w-full h-full overflow-clip rounded-xl border-blue-500 border-2">
                 {% render 'grumps-logo-blue' %}
               </div>
