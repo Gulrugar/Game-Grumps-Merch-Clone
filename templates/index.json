@@ -1,4 +1,4 @@
-{ 
+{
   "wrapper": "div.mx-auto.container.px-4",
   "sections": {
     "image_banner": {
@@ -6,19 +6,19 @@
       "settings": {
         "image_desktop": "shopify:\/\/shop_images\/1677610132-rpgsbannerw3_default.webp",
         "image_mobile": "shopify:\/\/shop_images\/1677610138-rpgsbannerw3_mobile.webp",
-        "url": "https://youtube.com"
+        "url": "https:\/\/youtube.com"
       }
     },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "birthday-flowers"
+        "collection": "t-shirts"
       }
     },
     "LAK-featured-collection": {
       "type": "LAK-featured-collection",
       "settings": {
-        "collection": "birthday-flowers"
+        "collection": "t-shirts"
       }
     }
   },
