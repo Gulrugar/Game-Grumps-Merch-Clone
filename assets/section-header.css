@@ -1,3 +1,3 @@
-button[data-radix-collection-item]:hover .radix-state-open\:rotate-180 {
+button[data-state="open"] .radix-state-open\:rotate-180 {
   transform: rotate(-180deg);
 }

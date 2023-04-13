@@ -22,15 +22,21 @@ function setHoverMenu (targetBtnMenu, otherBtnMenu) {
   const menuSetStyle = (display = 'none') => {
     if (display === 'none' && targetBtnMenu.menu.matches(":hover")) {
         targetBtnMenu.timeoutId = setTimeout(menuSetStyle, 250);
-        console.log('here')
     } else {
-      targetBtnMenu.menu.style.display = display
+      targetBtnMenu.menu.style.display = display;
+      if (display === 'none') {
+        targetBtnMenu.button.setAttribute('data-state', 'closed')
+      }
     }
   }
 
   targetBtnMenu.button.addEventListener('mouseenter', (e) => {
     clearTimeout(targetBtnMenu.timeoutId);
     clearTimeout(otherBtnMenu.timeoutId);
+
+    otherBtnMenu.button.setAttribute('data-state', 'closed')
+    targetBtnMenu.button.setAttribute('data-state', 'open')
+
     otherBtnMenu.menu.style.display = 'none';
     menuSetStyle('flex');
   })
