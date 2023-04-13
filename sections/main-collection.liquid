@@ -110,10 +110,16 @@
             </select>
           </div>
         </div>
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {%- for product in collection.products -%}
-            {% render 'card-product', card_product: product %}
-          {%- endfor -%}
+        <div id="ProductGridContainer">
+          <div
+            id="product-grid"
+            data-id="{{ section.id }}"
+            class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {%- for product in collection.products -%}
+              {% render 'card-product', card_product: product %}
+            {%- endfor -%}
+          </div>
         </div>
       </div>
     </div>
