@@ -22,6 +22,7 @@ function setHoverMenu (targetBtnMenu, otherBtnMenu) {
   const menuSetStyle = (display = 'none') => {
     if (display === 'none' && targetBtnMenu.menu.matches(":hover")) {
         targetBtnMenu.timeoutId = setTimeout(menuSetStyle, 250);
+        console.log('here')
     } else {
       targetBtnMenu.menu.style.display = display
     }
