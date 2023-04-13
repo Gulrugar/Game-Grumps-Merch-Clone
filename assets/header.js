@@ -10,7 +10,7 @@ let menuTimeout;
 
 const explMerchMenuSetStyle = (display = 'none') => {
   if (display === 'none' && explMerchMenu.matches(":hover")) {
-      menuTimeout = setTimeout(explMerchMenuSetStyle, 500);
+      menuTimeout = setTimeout(explMerchMenuSetStyle, 250);
   } else {
     explMerchMenu.style.display = display
   }
@@ -22,5 +22,5 @@ explMerchEl.addEventListener('mouseenter', (e) => {
 })
 
 explMerchEl.addEventListener('mouseleave', (e) => {
-  menuTimeout = setTimeout(explMerchMenuSetStyle, 500)
+  menuTimeout = setTimeout(explMerchMenuSetStyle, 250)
 })

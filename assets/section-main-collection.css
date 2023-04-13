@@ -1,0 +1,46 @@
+.fadeIn {
+  animation-name: fadeIn;
+  -webkit-animation-name: fadeIn;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+}
+
+.ProductCard_root__HqXTt {
+  position: relative;
+  z-index: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  max-height: 100%;
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: .5rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 229 229/var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255/var(--tw-bg-opacity));
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;
+  transition-duration: .15s;
+  transition-timing-function: linear;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

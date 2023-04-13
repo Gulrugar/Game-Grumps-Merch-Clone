@@ -158,7 +158,8 @@
             </li>
           </ul>
         </div>
-        <div id="headerHoverMenuDesktop1" class="absolute flex origin-top justify-end z-[1001]" style="top: 110%; width: 310%; left: -110%; display:none;">
+        {% comment %}Desktop Menus{% endcomment %}
+        <div id="headerHoverMenuDesktop1" class="absolute flex origin-top justify-end z-[1001]" style="top: 110%; left: -110%; display:none;">
           <div
             data-state="open" data-orientation="horizontal" class=""
             class="relative origin-top top-[13px] shadow-lg rounded-xl bg-black overflow-hidden z-50
@@ -307,6 +308,7 @@
         {% render 'icon-hamburger' %}
       </button>
     </div>
+    {% comment %}Mobile Menu{% endcomment %}
     <div id="radix-3" class="w-full overflow-hidden radix-state-open:animate-[collapsible-open-content_0.3s_cubic-bezier(0.050,0.705,0.510,1.155)] radix-state-closed:animate-[collapsible-close-content_0.3s_cubic-bezier(0.050,0.705,0.510,1.155)]" data-state="closed" style="--radix-collapsible-content-height: 560px; --radix-collapsible-content-width: 417px;" hidden>
       <div class="px-5">
         <div class="bg-gray-800 rounded-full h-[2px] w-full">

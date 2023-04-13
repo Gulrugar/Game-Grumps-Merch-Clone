@@ -127,8 +127,8 @@
         "type": "range",
         "id": "body_scale",
         "min": 100,
-        "max": 130,
-        "step": 5,
+        "max": 200,
+        "step": 10,
         "unit": "%",
         "label": "t:settings_schema.typography.settings.body_scale.label",
         "default": 100

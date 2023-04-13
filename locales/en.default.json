@@ -1,1 +1,10 @@
-{}
+{
+  "templates": {
+    "search": {
+      "results_products_with_count": {
+        "one": "Showing {{ count }} result",
+        "other": "Showing {{ count }} results"
+      }
+    }
+  }
+}

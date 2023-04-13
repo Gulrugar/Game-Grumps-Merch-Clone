@@ -1,1 +1,119 @@
-this is main-collection.liquid
+{{ 'section-main-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-card-product.css' | asset_url | stylesheet_tag }}
+
+<div class="mx-auto container px-4">
+  <div class="mx-auto max-w-7xl px-6 w-full">
+    <div class="grid grid-cols-1 gap-5 mt-3 mb-20 lg:grid-cols-5">
+      <div class="order-1 lg:col-span-1 lg:order-none lg:block hidden relative">
+        <div class="inline-block w-full h-screen sticky top-4 overflow-y-auto pr-1">
+          <div class="origin-top-left absolute lg:relative left-0 w-full rounded-md shadow-lg lg:shadow-none z-0 lg:block hidden">
+            <div role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+              <details class="border-gray-200 rounded-lg border-2 overflow-hidden mb-4 lg:mb-6 last:mb-0" data-state="open" open>
+                <summary>
+                  <h3 data-state="open">
+                    <div class="group w-full flex justify-between items-center p-2 bg-white transition hover:bg-gray-200">
+                      <h3 class="lg:text-xl md:text-lg text-lg font-bold truncate">Apparel</h3>
+                      {% render 'icon-caret' %}
+                    </div>
+                  </h3>
+                </summary>
+                <ul>
+                  <li>
+                    <a class="block w-full leading-5 text-interactive text-lg border-t-2 border-gray-200 p-2 bg-white lg:text-lg md:text-lg text-base font-semibold truncate transition hover:bg-gray-200 hover:text-primary focus:bg-gray-200 focus:text-primary" href="{{ collections['t-shirts'].url }}">T-Shirts</a>
+                  </li>
+                  <li>
+                    <a class="block w-full leading-5 text-interactive text-lg border-t-2 border-gray-200 p-2 bg-white lg:text-lg md:text-lg text-base font-semibold truncate transition hover:bg-gray-200 hover:text-primary focus:bg-gray-200 focus:text-primary" href="{{ collections['hats'].url }}">Hats</a>
+                  </li>
+                  <li>
+                    <a class="block w-full leading-5 text-interactive text-lg border-t-2 border-gray-200 p-2 bg-white lg:text-lg md:text-lg text-base font-semibold truncate transition hover:bg-gray-200 hover:text-primary focus:bg-gray-200 focus:text-primary" href="{{ collections['socks'].url }}">Socks</a>
+                  </li>
+                  <li>
+                    <a class="block w-full leading-5 text-interactive text-lg border-t-2 border-gray-200 p-2 bg-white lg:text-lg md:text-lg text-base font-semibold truncate transition hover:bg-gray-200 hover:text-primary focus:outline-none focus:bg-gray-200 focus:text-primary" href="{{ collections['apparel'].url }}">All Apparel</a>
+                  </li>
+                </ul>
+              </details>
+              <details class="border-gray-200 rounded-lg border-2 overflow-hidden mb-4 lg:mb-6 last:mb-0" data-state="open" open>
+                <summary>
+                  <h3 data-state="open">
+                    <div class="group w-full flex justify-between items-center p-2 bg-white transition hover:bg-gray-200">
+                      <h3 class="lg:text-xl md:text-lg text-lg font-bold truncate">Accessories</h3>
+                      {% render 'icon-caret' %}
+                    </div>
+                  </h3>
+                </summary>
+                <ul>
+                  <li>
+                    <a class="block w-full leading-5 text-interactive text-lg border-t-2 border-gray-200 p-2 bg-white lg:text-lg md:text-lg text-base font-semibold truncate transition hover:bg-gray-200 hover:text-primary focus:bg-gray-200 focus:text-primary" href="{{ collections['pins'].url }}">Pins</a>
+                  </li>
+                  <li>
+                    <a class="block w-full leading-5 text-interactive text-lg border-t-2 border-gray-200 p-2 bg-white lg:text-lg md:text-lg text-base font-semibold truncate transition hover:bg-gray-200 hover:text-primary focus:bg-gray-200 focus:text-primary" href="{{ collections['keychains'].url }}">Keychains</a>
+                  </li>
+                  <li>
+                    <a class="block w-full leading-5 text-interactive text-lg border-t-2 border-gray-200 p-2 bg-white lg:text-lg md:text-lg text-base font-semibold truncate transition hover:bg-gray-200 hover:text-primary focus:bg-gray-200 focus:text-primary" href="{{ collections['drinkware'].url }}">Drinkware</a>
+                  </li>
+                  <li>
+                    <a class="block w-full leading-5 text-interactive text-lg border-t-2 border-gray-200 p-2 bg-white lg:text-lg md:text-lg text-base font-semibold truncate transition hover:bg-gray-200 hover:text-primary focus:outline-none focus:bg-gray-200 focus:text-primary" href="{{ collections['accessories'].url }}">All Accessories</a>
+                  </li>
+                </ul>
+              </details>
+              <details class="border-gray-200 rounded-lg border-2 overflow-hidden mb-4 lg:mb-6 last:mb-0" data-state="open" open>
+                <summary>
+                  <h3 data-state="open">
+                    <div class="group w-full flex justify-between items-center p-2 bg-white transition hover:bg-gray-200">
+                      <h3 class="lg:text-xl md:text-lg text-lg font-bold truncate">Miscellaneous</h3>
+                      {% render 'icon-caret' %}
+                    </div>
+                  </h3>
+                </summary>
+                <ul>
+                  <li>
+                    <a class="block w-full leading-5 text-interactive text-lg border-t-2 border-gray-200 p-2 bg-white lg:text-lg md:text-lg text-base font-semibold truncate transition hover:bg-gray-200 hover:text-primary focus:bg-gray-200 focus:text-primary" >Books</a>
+                  </li>
+                  <li>
+                    <a class="block w-full leading-5 text-interactive text-lg border-t-2 border-gray-200 p-2 bg-white lg:text-lg md:text-lg text-base font-semibold truncate transition hover:bg-gray-200 hover:text-primary focus:bg-gray-200 focus:text-primary" >Stationery</a>
+                  </li>
+                  <li>
+                    <a class="block w-full leading-5 text-interactive text-lg border-t-2 border-gray-200 p-2 bg-white lg:text-lg md:text-lg text-base font-semibold truncate transition hover:bg-gray-200 hover:text-primary focus:bg-gray-200 focus:text-primary" href="{{ collections['posters'].url }}">Posters</a>
+                  </li>
+                  <li>
+                    <a class="block w-full leading-5 text-interactive text-lg border-t-2 border-gray-200 p-2 bg-white lg:text-lg md:text-lg text-base font-semibold truncate transition hover:bg-gray-200 hover:text-primary focus:outline-none focus:bg-gray-200 focus:text-primary" href="{{ collections['miscellaneous'].url }}">All Miscellaneous</a>
+                  </li>
+                </ul>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-3 col-span-1 lg:col-span-4 lg:order-none">
+        <div class="flex justify-between items-start max-h-full box-border overflow-hidden mb-2 lg:mb-3 md:mx-0 mx-4">
+          <div class="transition duration-75 ease-in text-subtle">
+            <h2 class="lg:text-3xl text-lg md:text-2xl font-bold text-primary">Apparel</h2>
+            <span class="animated fadeIn text-base">
+              {{ 'templates.search.results_products_with_count' | t: count: collection.all_products_count }}
+            </span>
+          </div>
+          <div class="ml-auto flex gap-4">
+            {%- assign sort_by = collection.sort_by | default: collection.default_sort_by  -%}
+            <select id="radix-10" class="inline-flex justify-center items-center py-2 px-2 text-base lg:text-lg font-bold text-center normal-case shadow-none transition ease-out text-interactive bg-white border-gray-200 border-2 rounded-lg hover:bg-gray-200 hover:border-gray-300 hover:text-primary focus:border-gray-500" aria-haspopup="menu" data-state="closed">
+              {%- for option in collection.sort_options -%}
+                <option
+                  value="{{ option.value | escape }}"
+                  {% if option.value == sort_by %}
+                    selected="selected"
+                  {% endif %}
+                >
+                  {{ option.name | escape }}
+                </option>
+              {%- endfor -%}
+            </select>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {%- for product in collection.products -%}
+            {% render 'card-product', card_product: product %}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

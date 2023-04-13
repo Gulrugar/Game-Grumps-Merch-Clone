@@ -97,9 +97,11 @@
         box-sizing: inherit;
       }
 
+      /* * { outline: 1px red solid !important; visibility: visible !important } */
+
       html {
         box-sizing: border-box;
-        font-size: calc(var(--font-body-scale) * 100%);
+        font-size: calc(var(--font-body-scale) * 62.5%);
         height: 100%
       }
 
@@ -153,6 +155,11 @@
     </main>
 
     {% sections 'footer-group' %}
+
+    <a class="px-6 py-4 bg-black drop-shadow-md rounded-3xl gap-4 fixed z-[100] right-6 2xl:right-12 bottom-6 2xl:bottom-12 flex items-center justify-center flex-nowrap transform ease-elastic transition-all hover:scale-[1.02] active:scale-[.98] sm:flex hidden" href="{{ routes.cart_url }}">
+      {% render 'icon-cart' %}
+      <span class="text-white texl-xl font-semibold">Cart</span>
+    </a>
 
     <script>
       window.shopUrl = '{{ request.origin }}';

@@ -1,0 +1,82 @@
+.ProductCard_root__HqXTt {
+  position: relative;
+  z-index: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  max-height: 100%;
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: .5rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 229 229/var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255/var(--tw-bg-opacity));
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;
+  transition-duration: .15s;
+  transition-timing-function: linear;
+}
+
+.ProductCard_root__HqXTt:hover .ProductCard_productImage__nbfNy {
+  transform: scale(1.0625);
+}
+
+.ProductCard_imageContainer__G6HoR {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ProductCard_imageContainer__G6HoR > div {
+  min-width: 100%;
+}
+
+.ProductCard_imageContainer__G6HoR .ProductCard_productImage__nbfNy {
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  object-fit: cover;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .5s;
+}
+
+.ProductTag_root__Nxivt {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 229 229/var(--tw-border-opacity));
+  padding-left: .5rem;
+  padding-right: .5rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+.ProductTag_root__Nxivt .ProductTag_name__C_niq {
+  width: 100%;
+  max-width: 100%;
+}
+
+.ProductTag_root__Nxivt span {
+  font-weight: 700;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ProductTag_root__Nxivt .ProductTag_price__RDK06 {
+  flex-shrink: 0;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+
+.text-subtle {
+  color: #69727b;
+}

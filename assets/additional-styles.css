@@ -25,3 +25,7 @@
     max-width: 1280px;
   }
 }
+
+summary::marker {
+  content: '';
+}
