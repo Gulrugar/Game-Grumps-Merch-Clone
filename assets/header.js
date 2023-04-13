@@ -4,23 +4,40 @@ document.querySelector('[aria-controls="radix-3"]').addEventListener('click', (e
 
 
 // Handle menu hover
-const explMerchEl = document.getElementById('radix-4-trigger-radix-0');
-const explMerchMenu = document.getElementById('headerHoverMenuDesktop1');
-let menuTimeout;
+let menuTimeout1;
+let menuTimeout2;
 
-const explMerchMenuSetStyle = (display = 'none') => {
-  if (display === 'none' && explMerchMenu.matches(":hover")) {
-      menuTimeout = setTimeout(explMerchMenuSetStyle, 250);
-  } else {
-    explMerchMenu.style.display = display
-  }
+const exploreMerchBtnMenu = {
+  button: document.getElementById('radix-4-trigger-radix-0'),
+  menu: document.getElementById('headerHoverMenuDesktop1'),
+  timeoutId: menuTimeout1
+}
+const moreBtnMenu = {
+  button: document.getElementById('radix-4-trigger-radix-1'),
+  menu: document.getElementById('headerHoverMenuDesktop2'),
+  timeoutId: menuTimeout2
 }
 
-explMerchEl.addEventListener('mouseenter', (e) => {
-  clearTimeout(menuTimeout);
-  explMerchMenuSetStyle('flex');
-})
+function setHoverMenu (targetBtnMenu, otherBtnMenu) {
+  const menuSetStyle = (display = 'none') => {
+    if (display === 'none' && targetBtnMenu.menu.matches(":hover")) {
+        targetBtnMenu.timeoutId = setTimeout(menuSetStyle, 250);
+    } else {
+      targetBtnMenu.menu.style.display = display
+    }
+  }
 
-explMerchEl.addEventListener('mouseleave', (e) => {
-  menuTimeout = setTimeout(explMerchMenuSetStyle, 250)
-})
+  targetBtnMenu.button.addEventListener('mouseenter', (e) => {
+    clearTimeout(targetBtnMenu.timeoutId);
+    clearTimeout(otherBtnMenu.timeoutId);
+    otherBtnMenu.menu.style.display = 'none';
+    menuSetStyle('flex');
+  })
+
+  targetBtnMenu.button.addEventListener('mouseleave', (e) => {
+    targetBtnMenu.timeoutId = setTimeout(menuSetStyle, 250)
+  })
+}
+setHoverMenu(exploreMerchBtnMenu, moreBtnMenu);
+setHoverMenu(moreBtnMenu, exploreMerchBtnMenu);
+
