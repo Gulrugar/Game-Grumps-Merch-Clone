@@ -111,12 +111,18 @@
           </div>
         </div>
         <div id="ProductGridContainer">
+          {%- if collection.sort_by == blank -%}
+            {% assign collectionToShow = collection.products | reverse %}
+          {%- else -%}
+            {% assign collectionToShow = collection.products %}
+          {%- endif -%}
+
           <div
             id="product-grid"
             data-id="{{ section.id }}"
             class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
           >
-            {%- for product in collection.products -%}
+            {%- for product in collectionToShow -%}
               {% assign lazy_load = false %}
               {%- if forloop.index > 2 -%}
                 {%- assign lazy_load = true -%}
