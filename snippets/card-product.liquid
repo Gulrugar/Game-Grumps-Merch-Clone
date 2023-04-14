@@ -1,4 +1,16 @@
-<div class="ProductCard_root__HqXTt snap-center">
+{% comment %}
+  Accepts:
+    - card_product: {Object} product
+    - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
+
+  Example usage:
+  {% render 'card-product',
+    card_product: product,
+    lazy_load: true
+  %}
+{% endcomment %}
+
+<div class="ProductCard_root__HqXTt snap-center animated fadeIn">
   <div class="absolute h-16 w-16 top-0 right-0 z-10"></div>
   <a href="{{ card_product.url }}">
     <div class="ProductCard_imageContainer__G6HoR">
@@ -20,6 +32,9 @@
               {{ card_product.featured_image | image_url: width: 2048 }} 2048w, 
               {{ card_product.featured_image | image_url: width: 3840 }} 3840w
              "
+             {% unless lazy_load == false %}
+              loading="lazy"
+             {% endunless %}
              decoding="async"
              data-nimg="responsive"
              style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"

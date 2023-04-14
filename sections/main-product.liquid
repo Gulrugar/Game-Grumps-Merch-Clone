@@ -1,1 +1,131 @@
-this is main-product.liquid
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+
+<div class="mx-auto container px-4">
+  <div class="max-w-none w-full">
+    <div class="ProductView_root__hqkHp fit px-4">
+      {% comment %}Product Media Gallery{% endcomment %}
+      <div class="ProductView_main__mYQdy fit">
+        <div class="ProductView_sliderContainer__6XH62">
+          <div class="ProductSlider_root__RFy30">
+            <div class="ProductSlider_slider__kaFZL ProductSlider_show__FLJHm keen-slider">
+              <div>
+                <div class="ProductSliderControl_sliderControl__O_xJ7 md:opacity-0">
+                  <button class="ProductSliderControl_controlButton__S_YwH ProductSliderControl_disabled__LU7qv">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    ><path d="M19 12H5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 19L5 12L12 5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </button>
+                  <button class="ProductSliderControl_controlButton__S_YwH">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" ><path d="M5 12H19" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 5L19 12L12 19" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </button>
+                </div>
+                <a class="ProductSlider_zoomFab__ny9vF" href="{{ product.featured_image | img_url: 'master' }}" target="_blank" rel="norefferer">
+                  {% render 'icon-magnifying-lens' %}
+                </a>
+              </div>
+              {% comment %}Slider Images{% endcomment %}
+              <div class="ProductView_imageContainer__NY_2C keen-slider__slide">
+                <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: relative;">
+                  <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 100% 0px 0px;"></span>
+                  <img
+                    class="ProductView_img__P_Ydq"
+                    sizes="100vw"
+                    srcset="
+                      {{ product.featured_image | image_url: width: 640 }} 640w, 
+                      {{ product.featured_image | image_url: width: 750 }} 750w, 
+                      {{ product.featured_image | image_url: width: 828 }} 828w,
+                      {{ product.featured_image | image_url: width: 1080 }} 1080w,
+                      {{ product.featured_image | image_url: width: 1200 }} 1200w,
+                      {{ product.featured_image | image_url: width: 1920 }} 1920w
+                    "
+                    decoding="aysnc"
+                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+                  >
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-4 mt-1">
+            {% comment %}Slider Thumbnails{% endcomment %}
+            <div id="thumb-0" class="p-1 md:p-2 keen-slider__slide">
+              <div class="ProductSlider_thumb__an0vK ProductSlider_selected__cUbLA w-full !min-h-[auto]">
+                <div class="ProductView_imageContainer__NY_2C ProductSlider_albumItem__4LAS9">
+                  <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: relative;">
+                    <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 100% 0px 0px;"></span>
+                    <img
+                      class="ProductView_img__P_Ydq"
+                      sizes="100vw"
+                      srcset="
+                        {{ product.featured_image | image_url: width: 640 }} 640w, 
+                        {{ product.featured_image | image_url: width: 750 }} 750w, 
+                        {{ product.featured_image | image_url: width: 828 }} 828w,
+                        {{ product.featured_image | image_url: width: 1080 }} 1080w,
+                        {{ product.featured_image | image_url: width: 1200 }} 1200w,
+                        {{ product.featured_image | image_url: width: 1920 }} 1920w
+                      "
+                      decoding="async"
+                      style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+                    >
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div id="thumb-1" class="p-1 md:p-2 keen-slider__slide">
+              <div class="ProductSlider_thumb__an0vK w-full !min-h-[auto]">
+                <div class="ProductView_imageContainer__NY_2C ProductSlider_albumItem__4LAS9">
+                  <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: relative;">
+                    <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 100% 0px 0px;"></span>
+                    <img
+                      class="ProductView_img__P_Ydq"
+                      sizes="100vw"
+                      srcset="
+                        {{ product.featured_image | image_url: width: 640 }} 640w, 
+                        {{ product.featured_image | image_url: width: 750 }} 750w, 
+                        {{ product.featured_image | image_url: width: 828 }} 828w,
+                        {{ product.featured_image | image_url: width: 1080 }} 1080w,
+                        {{ product.featured_image | image_url: width: 1200 }} 1200w,
+                        {{ product.featured_image | image_url: width: 1920 }} 1920w
+                      "
+                      decoding="async"
+                      style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+                    >
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% comment %}Product Details{% endcomment %}
+      <div class="ProductView_sidebar__pNv5P">
+        <div class="ProductTag_root__Nxivt border-b md:border-none">
+          <h3 class="ProductTag_name__C_niq text-xl sm:text-3xl font-bold">
+            {{ product.title }}
+          </h3>
+          <div class="flex gap-2">
+            <span class="ProductTag_price__RDK06 !text-xl">{{ product.price | money_with_currency }}</span>
+          </div>
+        </div>
+        <div class="px-2">
+          {% comment %}Variant selectors{% endcomment %}
+          <div>
+            {% render 'product-variant-picker', product: product %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Shipping or Additional Product Info",
+        "default": "<p>Add some shipping information</p>"
+      }
+    ]
+  }
+{% endschema %}

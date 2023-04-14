@@ -69,10 +69,10 @@
                 </summary>
                 <ul>
                   <li>
-                    <a class="block w-full leading-5 text-interactive text-lg border-t-2 border-gray-200 p-2 bg-white lg:text-lg md:text-lg text-base font-semibold truncate transition hover:bg-gray-200 hover:text-primary focus:bg-gray-200 focus:text-primary" >Books</a>
+                    <a class="block w-full leading-5 text-interactive text-lg border-t-2 border-gray-200 p-2 bg-white lg:text-lg md:text-lg text-base font-semibold truncate transition hover:bg-gray-200 hover:text-primary focus:bg-gray-200 focus:text-primary" href="{{ collections['books'].url }}">Books</a>
                   </li>
                   <li>
-                    <a class="block w-full leading-5 text-interactive text-lg border-t-2 border-gray-200 p-2 bg-white lg:text-lg md:text-lg text-base font-semibold truncate transition hover:bg-gray-200 hover:text-primary focus:bg-gray-200 focus:text-primary" >Stationery</a>
+                    <a class="block w-full leading-5 text-interactive text-lg border-t-2 border-gray-200 p-2 bg-white lg:text-lg md:text-lg text-base font-semibold truncate transition hover:bg-gray-200 hover:text-primary focus:bg-gray-200 focus:text-primary" href="{{ collections['stationery'].url }}">Stationery</a>
                   </li>
                   <li>
                     <a class="block w-full leading-5 text-interactive text-lg border-t-2 border-gray-200 p-2 bg-white lg:text-lg md:text-lg text-base font-semibold truncate transition hover:bg-gray-200 hover:text-primary focus:bg-gray-200 focus:text-primary" href="{{ collections['posters'].url }}">Posters</a>
@@ -89,7 +89,7 @@
       <div class="order-3 col-span-1 lg:col-span-4 lg:order-none">
         <div class="flex justify-between items-start max-h-full box-border overflow-hidden mb-2 lg:mb-3 md:mx-0 mx-4">
           <div class="transition duration-75 ease-in text-subtle">
-            <h2 class="lg:text-3xl text-lg md:text-2xl font-bold text-primary">Apparel</h2>
+            <h2 class="lg:text-3xl text-lg md:text-2xl font-bold text-primary">{{ collection.title }}</h2>
             <span class="animated fadeIn text-base">
               {{ 'templates.search.results_products_with_count' | t: count: collection.all_products_count }}
             </span>
@@ -117,7 +117,13 @@
             class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
           >
             {%- for product in collection.products -%}
-              {% render 'card-product', card_product: product %}
+              {% assign lazy_load = false %}
+              {%- if forloop.index > 2 -%}
+                {%- assign lazy_load = true -%}
+              {%- endif -%}
+              {% render 'card-product',
+                card_product: product,
+                lazy_load: lazy_load %}
             {%- endfor -%}
           </div>
         </div>

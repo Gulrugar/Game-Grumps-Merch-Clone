@@ -211,7 +211,7 @@
                         </ul>
                       </div>
                       <div>
-                        <a class="text-white font-bold text-lg hover:underline block whitespace-nowrap tracking-wide" href="{{ routes.search_url }}">
+                        <a class="text-white font-bold text-lg hover:underline block whitespace-nowrap tracking-wide" href="{{ collections['accessories'].url }}">
                           {% render 'icon-accessories' %}
                           <span class="align-middle">Accessories</span>
                         </a>
@@ -234,12 +234,12 @@
                         </a>
                         <ul class="text-base">
                           <li>
-                            <a class="text-white font-bold hover:underline block whitespace-nowrap tracking-wide">
+                            <a class="text-white font-bold hover:underline block whitespace-nowrap tracking-wide" href="{{ collections['books'].url }}">
                               Books
                             </a>
                           </li>
                           <li>
-                            <a class="text-white font-bold hover:underline block whitespace-nowrap tracking-wide">Stationery</a>
+                            <a class="text-white font-bold hover:underline block whitespace-nowrap tracking-wide" href="{{ collections['stationery'].url }}">Stationery</a>
                           </li>
                           <li>
                             <a class="text-white font-bold hover:underline block whitespace-nowrap tracking-wide" href="{{ collections['posters'].url }}">Posters</a>
@@ -283,10 +283,10 @@
 <div class="z-[1000] sticky sm:hidden p-2 top-0 w-full" data-state="closed">
   <nav class="flex flex-col justify-start items-center rounded-[28px] shadow-lg bg-black w-full">
     <div class="relative flex flex-row justify-between items-center w-full px-5 py-4">
-      <a href="" class="flex items-center justify-center flex-nowrap transform ease-elastic transition-all hover:scale-[1.02] active:scale-[.98]" href="{{ routes.cart_url }}">
+      <a class="flex items-center justify-center flex-nowrap transform ease-elastic transition-all hover:scale-[1.02] active:scale-[.98]" href="{{ routes.cart_url }}">
         {% render 'icon-cart' %}
       </a>
-      <a href="" class="cursor-pointer rounded-full transform duration-300 ease-elastic hover:scale-110" href="{{ routes.root_url }}">
+      <a class="cursor-pointer rounded-full transform duration-300 ease-elastic hover:scale-110" href="{{ routes.root_url }}">
         {%- if settings.logo != blank -%}
           <span style="box-sizing:border-box;display:inline-block;overflow:hidden;width:140px;height:44px;background:none;opacity:1;border:0;margin:0;padding:0;position:relative">
             <img

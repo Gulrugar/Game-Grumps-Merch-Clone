@@ -1,0 +1,19 @@
+{% comment %}
+  
+  Accepts:
+  - product: {Object} product
+
+  Example Usage:
+  {% render 'product-variant-picker',
+    product: product
+  %}
+{% endcomment %}
+
+{%- for option in product.options_with_values -%}
+  <div class="pt-4">
+    <h2 class="capitalize block text-gray-700 font-bold">{{ option.name }}</h2>
+    <div class="flex flex-row flex-wrap gap-2 pb-4 pt-1">
+      option buttons
+    </div>
+  </div>
+{%- endfor -%}

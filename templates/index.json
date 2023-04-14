@@ -14,17 +14,10 @@
       "settings": {
         "collection": "t-shirts"
       }
-    },
-    "LAK-featured-collection": {
-      "type": "LAK-featured-collection",
-      "settings": {
-        "collection": "t-shirts"
-      }
     }
   },
   "order": [
     "image_banner",
-    "featured-collection",
-    "LAK-featured-collection"
+    "featured-collection"
   ]
 }
