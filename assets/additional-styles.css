@@ -29,3 +29,11 @@
 summary::marker {
   content: '';
 }
+
+.bg-navy {
+  background-color: rgb(22, 84, 167);
+}
+
+.border-navy {
+  border-color: rgb(27, 84, 167);
+}

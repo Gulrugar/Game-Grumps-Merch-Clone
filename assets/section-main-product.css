@@ -165,3 +165,115 @@
   border-radius: .75rem;
   padding: .5rem;
 }
+
+.ProductView_sidebar__pNv5P {
+  grid-column: span 1/span 1;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  max-width: 1920px;
+  flex-direction: column;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.ProductTag_root__Nxivt {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 229 229/var(--tw-border-opacity));
+  padding-left: .5rem;
+  padding-right: .5rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+.ProductTag_root__Nxivt .ProductTag_name__C_niq {
+  width: 100%;
+  max-width: 100%;
+}
+
+.ProductTag_root__Nxivt .ProductTag_price__RDK06 {
+  flex-shrink: 0;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+
+.ProductTag_root__Nxivt span {
+  font-weight: 700;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.Swatch_active__UtqPO {
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(28 88 175/var(--tw-border-opacity));
+}
+
+.Swatch_swatch__GDm0T {
+  box-sizing: border-box;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: .5rem;
+  border-width: 2px;
+  padding: .5rem .75rem;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-interactive);
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .15s;
+  transition-timing-function: cubic-bezier(0,0,.2,1);
+  overflow: hidden;
+  min-width: 36pt;
+  min-height: 18pt;
+  height: 100%;
+}
+
+.Swatch_active__UtqPO,
+.Swatch_swatch__GDm0T:hover
+ {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 88 175/var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255/var(--tw-text-opacity));
+}
+
+.ProductSidebar_cartButton__5L_PU, .ProductSidebar_cartButton__5L_PU:hover {
+  transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.ProductSidebar_cartButton__5L_PU {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: .75rem;
+  border-width: 2px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  color: var(--text-interactive);
+  --tw-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .15s;
+  transition-timing-function: cubic-bezier(.05,.705,.51,1.155);
+}

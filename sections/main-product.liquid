@@ -1,7 +1,12 @@
 {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'variant-picker.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-image-slider.js' | asset_url }}" defer="defer"></script>
 
 <div class="mx-auto container px-4">
   <div class="max-w-none w-full">
+
+    {% assign product_form_id = 'product-form-' | append: section.id %}
+
     <div class="ProductView_root__hqkHp fit px-4">
       {% comment %}Product Media Gallery{% endcomment %}
       <div class="ProductView_main__mYQdy fit">
@@ -110,11 +115,44 @@
           <div>
             {% render 'product-variant-picker', product: product %}
           </div>
+          {% comment %}Product Form{% endcomment %}
+          {%- form 'product',
+            product,
+            id: product_form_id -%}
+            <div class="flex flex-col-reverse sm:flex-row-reverse gap-1 sm:gap-4 items-stretch justify-center">
+              <input
+                type="hidden"
+                name="id"
+                value="{{ product.selected_or_first_available_variant.id }}"
+                disabled
+              >
+              <div id="Data-{{ section.id }}" data-url="{{ product.url }}"></div>
+
+              <button type="submit" class="ProductSidebar_cartButton__5L_PU grow w-full border-navy bg-navy !text-white">Add To Cart</button>
+              <div class="self-center flex gap-4">
+                <button type="button" class="p-2 md:p-4 rounded-xl border-2 transition ease-in-out hover:bg-gray-200 stroke-current text-subtle hover:text-interactive disabled:cursor-not-allowed disabled:!border-gray-100 disabled:hover:bg-white">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="--darkreader-inline-stroke: currentColor;" data-darkreader-inline-stroke=""></path></svg>
+                </button>
+                <span id="quantity-input" class="self-center text-lg md:text-xl font-bold">1</span>
+                <button type="button" class="p-2 md:p-4 rounded-xl border-2 transition ease-in-out hover:bg-gray-200 stroke-current text-subtle hover:text-interactive disabled:cursor-not-allowed disabled:!border-gray-100 disabled:hover:bg-white">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="--darkreader-inline-stroke: currentColor;" data-darkreader-inline-stroke=""></path><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="--darkreader-inline-stroke: currentColor;" data-darkreader-inline-stroke=""></path></svg>
+                </button>
+              </div>
+
+              <script type="application/json">
+                {{ product.variants | json }}
+              </script>
+            </div>
+          {%- endform -%}
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+
+</script>
 
 {% schema %}
   {
