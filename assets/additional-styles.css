@@ -37,3 +37,9 @@ summary::marker {
 .border-navy {
   border-color: rgb(27, 84, 167);
 }
+
+button:disabled,
+button.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

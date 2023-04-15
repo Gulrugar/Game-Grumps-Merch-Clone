@@ -129,15 +129,31 @@
               <div id="Data-{{ section.id }}" data-url="{{ product.url }}"></div>
 
               <button type="submit" class="ProductSidebar_cartButton__5L_PU grow w-full border-navy bg-navy !text-white">Add To Cart</button>
-              <div class="self-center flex gap-4">
-                <button type="button" class="p-2 md:p-4 rounded-xl border-2 transition ease-in-out hover:bg-gray-200 stroke-current text-subtle hover:text-interactive disabled:cursor-not-allowed disabled:!border-gray-100 disabled:hover:bg-white">
+              
+              {%- assign cart_qty = cart | item_count_for_variant: product.selected_or_first_available_variant.id -%}
+              <quantity-input class="self-center flex gap-4">
+                <button type="button" name="minus" class="p-2 md:p-4 rounded-xl border-2 transition ease-in-out hover:bg-gray-200 stroke-current text-subtle hover:text-interactive disabled:cursor-not-allowed disabled:!border-gray-100 disabled:hover:bg-white">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="--darkreader-inline-stroke: currentColor;" data-darkreader-inline-stroke=""></path></svg>
                 </button>
-                <span id="quantity-input" class="self-center text-lg md:text-xl font-bold">1</span>
-                <button type="button" class="p-2 md:p-4 rounded-xl border-2 transition ease-in-out hover:bg-gray-200 stroke-current text-subtle hover:text-interactive disabled:cursor-not-allowed disabled:!border-gray-100 disabled:hover:bg-white">
+                <input
+                 id="Quantity-{{ section.id }}"
+                 class="self-center text-lg md:text-xl font-bold"
+                 type="number"
+                 name="quantity"
+                 data-cart-quantity="{{ cart_qty }}"
+                 data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                 min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                 {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
+                  data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                  max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                 {% endif %}
+                 step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
+                 value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                >
+                <button type="button" name="plus" class="p-2 md:p-4 rounded-xl border-2 transition ease-in-out hover:bg-gray-200 stroke-current text-subtle hover:text-interactive disabled:cursor-not-allowed disabled:!border-gray-100 disabled:hover:bg-white">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="--darkreader-inline-stroke: currentColor;" data-darkreader-inline-stroke=""></path><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="--darkreader-inline-stroke: currentColor;" data-darkreader-inline-stroke=""></path></svg>
                 </button>
-              </div>
+              </quantity-input>
 
               <script type="application/json">
                 {{ product.variants | json }}
