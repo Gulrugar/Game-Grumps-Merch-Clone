@@ -1,7 +1,10 @@
 {
   "sections": {
     "main": {
-      "type": "main-product"
+      "type": "main-product",
+      "settings": {
+        "content": "<p>Orders will be processed within 14 days.</p><p>All sales are final! Please double check and triple check your address and sizes! We are not responsible for international taxes and fees that you may be charged. If you have questions or concerns about your order please <a href='/pages/contact'>contact us</a></p>"
+      }
     }
   },
   "order": [

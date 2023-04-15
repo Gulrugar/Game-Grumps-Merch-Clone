@@ -2,6 +2,7 @@
 <script src="{{ 'variant-picker.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-image-slider.js' | asset_url }}" defer="defer"></script>
 
+
 <div class="mx-auto container px-4">
   <div class="max-w-none w-full">
 
@@ -137,7 +138,7 @@
                 </button>
                 <input
                  id="Quantity-{{ section.id }}"
-                 class="self-center text-lg md:text-xl font-bold"
+                 class="quantity-input self-center text-lg md:text-xl font-bold"
                  type="number"
                  name="quantity"
                  data-cart-quantity="{{ cart_qty }}"
@@ -159,10 +160,21 @@
                 {{ product.variants | json }}
               </script>
             </div>
+            {%- if product.description != blank -%}
+              <div class="Text_body__ldD0k !text-xl break-words w-full max-w-xl p-2">
+                {{ product.description }}
+              </div>
+            {%- endif -%}
           {%- endform -%}
         </div>
       </div>
     </div>
+
+    {%- if section.settings.content != blank -%}
+      <div class="py-12 mb-10 shipping-info">
+        {{ section.settings.content }}
+      </div>
+    {%- endif -%}
   </div>
 </div>
 

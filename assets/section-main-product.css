@@ -293,3 +293,31 @@
   transition-duration: .15s;
   transition-timing-function: cubic-bezier(.05,.705,.51,1.155);
 }
+
+.Text_body__ldD0k {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 72rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.shipping-info {
+  font-size: 1rem;
+}
+
+.shipping-info p {
+  margin-bottom: .5rem;
+}
+
+.shipping-info p:last-child {
+  margin-bottom: 1rem;
+}
+
+.shipping-info a {
+  text-decoration: underline;
+}
+
+.shipping-info a:hover {
+  opacity: .8;
+}

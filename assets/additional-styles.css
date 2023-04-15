@@ -43,3 +43,40 @@ button.disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
+
+
+
+.quantity-input {
+  color: currentColor;
+  background-color: transparent;
+  border-bottom: currentColor;
+
+  font-size: 1.4rem;
+  font-weight: 400;
+  opacity: .85;
+  text-align: center;
+  border: 0;
+  padding: 0 .5rem;
+  width: 100%;
+  flex-grow: 1;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.quantity-input[type="number"] {
+  -moz-appearance: textfield;
+  width: 2.5rem;
+}
+
+/* Rich Text Editor RTE */
+.Text_body__ldD0k :is(h1, h2, h3, h4, h5, h6, p, ul, ol) {
+  margin-bottom: 1rem;
+}
+
+.Text_body__ldD0k ul {
+  list-style-type: disc;
+}
+
+.Text_body__ldD0k ol, .Text_body__ldD0k ul {
+  padding-left: 1.5rem;
+}
