@@ -77,6 +77,20 @@
   font-weight: 600;
 }
 
+.ProductTag_strikethrough__T4AFY {
+  position: relative;
+}
+
+.ProductTag_strikethrough__T4AFY::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 55%;
+  right: 0;
+  border-top: 2px solid currentColor;
+  transform: rotate(-5deg);
+}
+
 .text-subtle {
   color: #69727b;
 }

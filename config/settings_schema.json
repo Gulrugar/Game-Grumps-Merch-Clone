@@ -8,12 +8,18 @@
     "theme_support_url": "https://gulrugar.github.io"
   },
   {
-    "name": "Background",
+    "name": "Miscellaneous Images",
     "settings": [
       {
         "type": "image_picker",
         "id": "repeating_bg",
         "label": "Repeating Background Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "on_sale_banner",
+        "label": "On Sale Banner",
+        "info": "Appears on product cards for products that are on sale"
       }
     ]
   },

@@ -49,10 +49,38 @@
         </span>
       </h3>
       <div class="flex gap-2 w-full">
+        {%- if card_product.price < card_product.compare_at_price -%}
+          <span class="ProductTag_price__RDK06 ProductTag_strikethrough__T4AFY pt-2">
+            {{ card_product.compare_at_price | money_with_currency }}
+          </span>
+        {%- endif -%}
+        <span></span>
         <span class="ProductTag_price__RDK06 pt-2 w-full text-subtle">
           {{ card_product.price | money_with_currency }}
         </span>
       </div>
     </div>
+    {%- if card_product.price < card_product.compare_at_price -%}
+      <div class="flex items-center justify-center mb-3">
+        <span style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: relative; max-width: 100%;">
+          <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; max-width: 100%;">
+            <img
+              style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px;"
+              src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27180%27%20height=%2750%27/%3e"
+            >
+          </span>
+          <img
+            alt="On Sale"
+            srcset="
+            {{ settings.on_sale_banner | image_url: width: 256 }} 1x,
+            {{ settings.on_sale_banner | image_url: width: 384 }} 2x
+            "
+            src="{{ settings.on_sale_banner | image_url: width: 384 }}"
+            decoding="async"
+            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          >
+        </span>
+      </div>
+    {%- endif -%}
   </a>
 </div>
