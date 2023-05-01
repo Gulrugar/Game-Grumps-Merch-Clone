@@ -6,7 +6,7 @@
 <div class="mx-auto container px-4">
   <div class="max-w-none w-full">
 
-    {% assign product_form_id = 'product-form-' | append: section.id %}
+    {% assign product_form_id = 'product-items-form' %}
 
     <div class="ProductView_root__hqkHp fit px-4">
       {% comment %}Product Media Gallery{% endcomment %}
@@ -125,7 +125,7 @@
                 type="hidden"
                 name="id"
                 value="{{ product.selected_or_first_available_variant.id }}"
-                disabled
+                
               >
               <div id="Data-{{ section.id }}" data-url="{{ product.url }}"></div>
 
@@ -177,10 +177,6 @@
     {%- endif -%}
   </div>
 </div>
-
-<script>
-
-</script>
 
 {% schema %}
   {

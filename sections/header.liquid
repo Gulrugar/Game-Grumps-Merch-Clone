@@ -428,20 +428,6 @@
   </nav>
 </div>
 
-<script>
-  Array.from(document.querySelectorAll('button[data-radix-collection-item]')).forEach(element => {
-    console.log(element)
-    element.addEventListener('click', function(e) {
-      console.log(`the id: ${this.id}`)
-
-      const toggleEl = document.querySelector(`[aria-labelledby="${this.getAttribute('id')}"]`)
-
-      toggleEl.dataset.state = toggleEl.dataset.state === 'closed' ? 'open' : 'closed';
-    })
-  })
-  
-</script>
-
 {% schema %}
   {
     "name": "Header",

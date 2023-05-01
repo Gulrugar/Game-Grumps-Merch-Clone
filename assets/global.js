@@ -70,3 +70,12 @@ function debounce(fn, wait) {
     t = setTimeout(() => fn.apply(this, args), wait);
   };
 }
+
+// Accordion buttons
+Array.from(document.querySelectorAll('button[data-radix-collection-item]')).forEach(element => {
+  element.addEventListener('click', function(e) {
+    const toggleEl = document.querySelector(`[aria-labelledby="${this.getAttribute('id')}"]`)
+
+    toggleEl.dataset.state = toggleEl.dataset.state === 'closed' ? 'open' : 'closed';
+  })
+})
