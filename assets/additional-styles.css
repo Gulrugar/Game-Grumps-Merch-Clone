@@ -26,6 +26,10 @@
   }
 }
 
+.text-subtle {
+  color: #69727b;
+}
+
 summary::marker {
   content: '';
 }

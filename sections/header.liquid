@@ -283,6 +283,11 @@
     <div class="relative flex flex-row justify-between items-center w-full px-5 py-4">
       <a class="flex items-center justify-center flex-nowrap transform ease-elastic transition-all hover:scale-[1.02] active:scale-[.98]" href="{{ routes.cart_url }}">
         {% render 'icon-cart' %}
+        {%- if cart.item_count != 0 -%}
+          <span class="bg-white text-black rounded-full flex items-center justify-center text-subtle font-bold  absolute left-6 -top-3 p-[9px] w-2 h-2 text-xs">
+            {{ cart.item_count }}
+          </span>
+        {%- endif -%}
       </a>
       <a class="cursor-pointer rounded-full transform duration-300 ease-elastic hover:scale-110" href="{{ routes.root_url }}">
         {%- if settings.logo != blank -%}

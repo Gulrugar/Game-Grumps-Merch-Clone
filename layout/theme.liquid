@@ -156,10 +156,18 @@
 
     {% sections 'footer-group' %}
 
-    <a class="px-6 py-4 bg-black drop-shadow-md rounded-3xl gap-4 fixed z-[100] right-6 2xl:right-12 bottom-6 2xl:bottom-12 flex items-center justify-center flex-nowrap transform ease-elastic transition-all hover:scale-[1.02] active:scale-[.98] sm:flex hidden" href="{{ routes.cart_url }}">
-      {% render 'icon-cart' %}
-      <span class="text-white texl-xl font-semibold">Cart</span>
-    </a>
+    {%- unless request.page_type == 'cart' -%}
+      <a class="px-6 py-4 bg-black drop-shadow-md rounded-3xl gap-4 fixed z-[100] right-6 2xl:right-12 bottom-6 2xl:bottom-12 flex items-center justify-center flex-nowrap transform ease-elastic transition-all hover:scale-[1.02] active:scale-[.98] sm:flex hidden" href="{{ routes.cart_url }}">
+        {% render 'icon-cart' %}
+        <span class="text-white texl-xl font-semibold">Cart</span>
+        {%- if cart.item_count != 0 -%}
+          <span class="bg-white text-black rounded-full flex items-center justify-center text-subtle font-bold p-5 w-4 h-4 text-lg">
+            {{ cart.item_count }}
+          </span>
+        {%- endif -%}
+
+      </a>
+    {%- endunless -%}
 
     <script>
       window.shopUrl = '{{ request.origin }}';
