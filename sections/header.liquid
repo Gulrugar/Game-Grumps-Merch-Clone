@@ -1,6 +1,7 @@
 <script src="{{ 'header.js' | asset_url}}" defer="defer"></script>
 {{ 'section-header.css' | asset_url | stylesheet_tag }}
 
+
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
 <symbol id="icon-tag" viewBox="0 0 24 28">
@@ -131,7 +132,6 @@
                 id="radix-4-trigger-radix-0" 
                 class="px-3 py-2 rounded-full hover:bg-white w-full flex justify-center gap-1 items-center  text-white text-lg font-semibold hover:text-black tracking-wide focus:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-opacity-75 group"
                 data-state="closed"
-                data-radix-collection-item
               > 
                 Explore Merch
                 {% render 'icon-caret' %}
@@ -142,7 +142,6 @@
                 id="radix-4-trigger-radix-1" 
                 class="px-3 py-2 rounded-full hover:bg-white w-full flex justify-center gap-1 items-center  text-white text-lg font-semibold hover:text-black tracking-wide focus:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-opacity-75 group"
                 data-state="closed"
-                data-radix-collection-item
               > 
                 More
                 {% render 'icon-caret' %}
@@ -151,7 +150,6 @@
             <li>
               <a 
                 class="px-3 py-2 rounded-full hover:bg-white w-full flex justify-center gap-1 items-center  text-white text-lg font-semibold hover:text-black tracking-wide focus:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-opacity-75"
-                data-radix-collection-item
               >
                 Live
               </a>
@@ -326,18 +324,50 @@
                   </h3>
                   {% render 'icon-menu-caret' %}
                 </button>
+                <div data-state="closed" class="radix-state-open:animate-accordion-open radix-state-closed:animate-accordion-close" aria-labelledby="radix-72">
+                  <ul class="pb-5">
+                    <li>
+                      <a href="{{ collections['t-shirts'].url }}" class="text-white font-semibold hover:underline block whitespace-nowrap tracking-wide py-1 text-base">T-Shirts</a>
+                    </li>
+                    <li>
+                      <a href="{{ collections['hats'].url }}" class="text-white font-semibold hover:underline block whitespace-nowrap tracking-wide py-1 text-base">Hats</a>
+                    </li>
+                    <li>
+                      <a href="{{ collections['socks'].url }}" class="text-white font-semibold hover:underline block whitespace-nowrap tracking-wide py-1 text-base">Socks</a>
+                    </li>
+                    <li>
+                      <a href="{{ collections['apparel'].url }}" class="text-white font-semibold hover:underline block whitespace-nowrap tracking-wide py-1 text-base">All Apparel</a>
+                    </li>
+                  </ul>
+                </div>
               </h3>
             </div>
             <div class="overflow-hidden">
               <div class="bg-gray-800 rounded-full h-[2px] w-full"></div>
               <h3 data-state="closed">
-                <button id="radix-74" class="group w-full flex justify-between items-center text-white py-4" type="button" data-state="closed">
+                <button id="radix-74" class="group w-full flex justify-between items-center text-white py-4" type="button" data-state="closed" data-radix-collection-item>
                   <h3 class="text-xl font-bold truncate tracking-wide">
                     {% render 'icon-accessories' %}
                     <span>Accessories</span>
                   </h3>
                   {% render 'icon-menu-caret' %}
                 </button>
+                <div data-state="closed" class="radix-state-open:animate-accordion-open radix-state-closed:animate-accordion-close" aria-labelledby="radix-74">
+                  <ul class="pb-5">
+                    <li>
+                      <a href="{{ collections['pins'].url }}" class="text-white font-semibold hover:underline block whitespace-nowrap tracking-wide py-1 text-base">Pins</a>
+                    </li>
+                    <li>
+                      <a href="{{ collections['keychains'].url }}" class="text-white font-semibold hover:underline block whitespace-nowrap tracking-wide py-1 text-base">Keychains</a>
+                    </li>
+                    <li>
+                      <a href="{{ collections['drinkware'].url }}" class="text-white font-semibold hover:underline block whitespace-nowrap tracking-wide py-1 text-base">Drinkware</a>
+                    </li>
+                    <li>
+                      <a href="{{ collections['accessories'].url }}" class="text-white font-semibold hover:underline block whitespace-nowrap tracking-wide py-1 text-base">All Accessories</a>
+                    </li>
+                  </ul>
+                </div>
               </h3>
             </div>
             <div class="overflow-hidden">
@@ -350,6 +380,22 @@
                   </h3>
                   {% render 'icon-menu-caret' %}
                 </button>
+                <div data-state="closed" class="radix-state-open:animate-accordion-open radix-state-closed:animate-accordion-close" aria-labelledby="radix-76">
+                  <ul class="pb-5">
+                    <li>
+                      <a href="{{ collections['books'].url }}" class="text-white font-semibold hover:underline block whitespace-nowrap tracking-wide py-1 text-base">Books</a>
+                    </li>
+                    <li>
+                      <a href="{{ collections['stationery'].url }}" class="text-white font-semibold hover:underline block whitespace-nowrap tracking-wide py-1 text-base">Stationery</a>
+                    </li>
+                    <li>
+                      <a href="{{ collections['posters'].url }}" class="text-white font-semibold hover:underline block whitespace-nowrap tracking-wide py-1 text-base">Posters</a>
+                    </li>
+                    <li>
+                      <a href="{{ collections['miscellaneous'].url }}" class="text-white font-semibold hover:underline block whitespace-nowrap tracking-wide py-1 text-base">All Miscellaneous</a>
+                    </li>
+                  </ul>
+                </div>
               </h3>
             </div>
           </div>
@@ -381,6 +427,20 @@
     </div>
   </nav>
 </div>
+
+<script>
+  Array.from(document.querySelectorAll('button[data-radix-collection-item]')).forEach(element => {
+    console.log(element)
+    element.addEventListener('click', function(e) {
+      console.log(`the id: ${this.id}`)
+
+      const toggleEl = document.querySelector(`[aria-labelledby="${this.getAttribute('id')}"]`)
+
+      toggleEl.dataset.state = toggleEl.dataset.state === 'closed' ? 'open' : 'closed';
+    })
+  })
+  
+</script>
 
 {% schema %}
   {

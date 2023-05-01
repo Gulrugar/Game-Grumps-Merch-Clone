@@ -1,3 +1,31 @@
 button[data-state="open"] .radix-state-open\:rotate-180 {
   transform: rotate(-180deg);
 }
+
+.radix-state-closed\:animate-accordion-close[data-state="closed"] {
+  animation: accordion-close-content .2s ease forwards;
+}
+
+.radix-state-open\:animate-accordion-open[data-state="open"] {
+  animation: accordion-open-content .2s ease forwards;
+}
+
+@keyframes accordion-close-content {
+  0% {
+    height: 150px;
+  }
+
+  100% {
+    height: 0;
+  }
+}
+
+@keyframes accordion-open-content {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 150px;
+  }
+}
