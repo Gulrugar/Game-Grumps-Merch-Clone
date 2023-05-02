@@ -112,3 +112,7 @@ button.disabled {
     height: 150px;
   }
 }
+
+.\!bg-interactive {
+  background-color: #3b434b !important;
+}

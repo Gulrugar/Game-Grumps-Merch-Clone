@@ -7,38 +7,39 @@
     product: product
   %}
 {% endcomment %}
-
-{%- for option in product.options_with_values -%}
-  <div class="pt-4">
-    <h2 class="capitalize block text-gray-700 font-bold text-base">{{ option.name }}</h2>
-    <div class="flex flex-row flex-wrap gap-2 pb-4 pt-1">
-      {%- liquid
-        assign variants_available_arr = product.variants | map: 'available'
-        assign variants_option1_arr = product.variants | map: 'option1'
-      -%}
-      
-      {%- for value in option.values -%}
+{%- unless product.has_only_default_variant -%}  
+  {%- for option in product.options_with_values -%}
+    <div class="pt-4">
+      <h2 class="capitalize block text-gray-700 font-bold text-base">{{ option.name }}</h2>
+      <div class="flex flex-row flex-wrap gap-2 pb-4 pt-1">
         {%- liquid
-          assign option_disabled = true
-
-          for option1_name in variants_option1_arr
-            if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
-              assign option_disabled = false
-            endif
-          endfor
+          assign variants_available_arr = product.variants | map: 'available'
+          assign variants_option1_arr = product.variants | map: 'option1'
         -%}
-        <div style="
-          {% if option_disabled %}background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20preserveAspectRatio%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cpath%20d%3D%22M%204%200%20L%204%200%20L%200%200%20L%200%204%20L%2096%20100%20L%20100%20100%20L%20100%2096%22%20fill%3D%22%23e5e7eb%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M%2096%200%20L%2096%200%20L%20100%200%20L%20100%204%20L%204%20100%20L%200%20100%20L%200%2096%22%20fill%3D%22%23e5e7eb%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: center center; background-size: cover; border-radius: 0.5em; overflow: hidden;{% endif %}
-        ">
-          <button
-            type="button"
-            class="Swatch_swatch__GDm0T {% if option.selected_value == value %} Swatch_active__UtqPO{% endif %} hover:bg-navy hover:text-white hover:border-navy undefined {% if option_disabled %} disabled{% endif %}"
-            data-value="{{ value | escape }}"
-          >
-            {{ value }}
-          </button>
-        </div>
-      {%- endfor -%}
+        
+        {%- for value in option.values -%}
+          {%- liquid
+            assign option_disabled = true
+
+            for option1_name in variants_option1_arr
+              if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+                assign option_disabled = false
+              endif
+            endfor
+          -%}
+          <div style="
+            {% if option_disabled %}background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20preserveAspectRatio%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cpath%20d%3D%22M%204%200%20L%204%200%20L%200%200%20L%200%204%20L%2096%20100%20L%20100%20100%20L%20100%2096%22%20fill%3D%22%23e5e7eb%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M%2096%200%20L%2096%200%20L%20100%200%20L%20100%204%20L%204%20100%20L%200%20100%20L%200%2096%22%20fill%3D%22%23e5e7eb%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: center center; background-size: cover; border-radius: 0.5em; overflow: hidden;{% endif %}
+          ">
+            <button
+              type="button"
+              class="Swatch_swatch__GDm0T {% if option.selected_value == value %} Swatch_active__UtqPO{% endif %} hover:bg-navy hover:text-white hover:border-navy undefined {% if option_disabled %} disabled{% endif %}"
+              data-value="{{ value | escape }}"
+            >
+              {{ value }}
+            </button>
+          </div>
+        {%- endfor -%}
+      </div>
     </div>
-  </div>
-{%- endfor -%}
+  {%- endfor -%}
+{%- endunless -%}
