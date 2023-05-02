@@ -1,6 +1,17 @@
 <script src="{{ 'header.js' | asset_url}}" defer="defer"></script>
 {{ 'section-header.css' | asset_url | stylesheet_tag }}
 
+<style>
+
+  @media screen and (max-width: 640px) {
+    .shopify-section-group-header-group {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+  }
+</style>
+
 
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
@@ -278,7 +289,7 @@
     </div>
   </div>
 </div>
-<div class="z-[1000] sticky sm:hidden p-2 top-0 w-full" data-state="closed">
+<div class="z-[1000] sm:hidden p-2 top-0 w-full" data-state="closed">
   <nav class="flex flex-col justify-start items-center rounded-[28px] shadow-lg bg-black w-full">
     <div class="relative flex flex-row justify-between items-center w-full px-5 py-4">
       <a class="flex items-center justify-center flex-nowrap transform ease-elastic transition-all hover:scale-[1.02] active:scale-[.98]" href="{{ routes.cart_url }}">
