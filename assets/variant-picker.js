@@ -1,5 +1,5 @@
 const variantBtns = document.querySelectorAll('.Swatch_swatch__GDm0T');
-const productForm = document.querySelector('[id^="product-form-"]')
+const productForm = document.getElementById('product-items-form')
 const variantData = JSON.parse(productForm.querySelector('[type="application/json"]').textContent)
 const variantInput = productForm.querySelector('input[name="id"]');
 const sectionURL = productForm.querySelector('[id^=Data-]').dataset.url;

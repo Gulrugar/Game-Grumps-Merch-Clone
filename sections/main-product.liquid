@@ -29,75 +29,56 @@
                 </a>
               </div>
               {% comment %}Slider Images{% endcomment %}
-              <div class="ProductView_imageContainer__NY_2C keen-slider__slide">
-                <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: relative;">
-                  <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 100% 0px 0px;"></span>
-                  <img
-                    class="ProductView_img__P_Ydq"
-                    sizes="100vw"
-                    srcset="
-                      {{ product.featured_image | image_url: width: 640 }} 640w, 
-                      {{ product.featured_image | image_url: width: 750 }} 750w, 
-                      {{ product.featured_image | image_url: width: 828 }} 828w,
-                      {{ product.featured_image | image_url: width: 1080 }} 1080w,
-                      {{ product.featured_image | image_url: width: 1200 }} 1200w,
-                      {{ product.featured_image | image_url: width: 1920 }} 1920w
-                    "
-                    decoding="aysnc"
-                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                  >
-                </span>
-              </div>
+              {%- for image in product.images -%}            
+                <div class="ProductView_imageContainer__NY_2C keen-slider__slide" style="min-width: 369px; max-width:369px; transform: translate3d(0px, 0px, 0px)">
+                  <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: relative;">
+                    <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 100% 0px 0px;"></span>
+                    <img
+                      class="ProductView_img__P_Ydq"
+                      sizes="100vw"
+                      srcset="
+                        {{ image | image_url: width: 640 }} 640w, 
+                        {{ image | image_url: width: 750 }} 750w, 
+                        {{ image | image_url: width: 828 }} 828w,
+                        {{ image | image_url: width: 1080 }} 1080w,
+                        {{ image | image_url: width: 1200 }} 1200w,
+                        {{ image | image_url: width: 1920 }} 1920w
+                      "
+                      decoding="aysnc"
+                      style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+                    >
+                  </span>
+                </div>
+              {%- endfor -%}
             </div>
           </div>
           <div class="grid grid-cols-4 mt-1">
             {% comment %}Slider Thumbnails{% endcomment %}
-            <div id="thumb-0" class="p-1 md:p-2 keen-slider__slide">
-              <div class="ProductSlider_thumb__an0vK ProductSlider_selected__cUbLA w-full !min-h-[auto]">
-                <div class="ProductView_imageContainer__NY_2C ProductSlider_albumItem__4LAS9">
-                  <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: relative;">
-                    <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 100% 0px 0px;"></span>
-                    <img
-                      class="ProductView_img__P_Ydq"
-                      sizes="100vw"
-                      srcset="
-                        {{ product.featured_image | image_url: width: 640 }} 640w, 
-                        {{ product.featured_image | image_url: width: 750 }} 750w, 
-                        {{ product.featured_image | image_url: width: 828 }} 828w,
-                        {{ product.featured_image | image_url: width: 1080 }} 1080w,
-                        {{ product.featured_image | image_url: width: 1200 }} 1200w,
-                        {{ product.featured_image | image_url: width: 1920 }} 1920w
-                      "
-                      decoding="async"
-                      style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                    >
-                  </span>
+            {%- for image in product.images -%}
+              <div id="thumb-{{ forloop.index0 }}" class="p-1 md:p-2">
+                <div class="ProductSlider_thumb__an0vK {% if forloop.index0 == 0 %} ProductSlider_selected__cUbLA {% endif %} w-full !min-h-[auto]">
+                  <div class="ProductView_imageContainer__NY_2C ProductSlider_albumItem__4LAS9">
+                    <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: relative;">
+                      <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 100% 0px 0px;"></span>
+                      <img
+                        class="ProductView_img__P_Ydq"
+                        sizes="100vw"
+                        srcset="
+                          {{ image | image_url: width: 640 }} 640w, 
+                          {{ image | image_url: width: 750 }} 750w, 
+                          {{ image | image_url: width: 828 }} 828w,
+                          {{ image | image_url: width: 1080 }} 1080w,
+                          {{ image | image_url: width: 1200 }} 1200w,
+                          {{ image | image_url: width: 1920 }} 1920w
+                        "
+                        decoding="async"
+                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+                      >
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div id="thumb-1" class="p-1 md:p-2 keen-slider__slide">
-              <div class="ProductSlider_thumb__an0vK w-full !min-h-[auto]">
-                <div class="ProductView_imageContainer__NY_2C ProductSlider_albumItem__4LAS9">
-                  <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: relative;">
-                    <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 100% 0px 0px;"></span>
-                    <img
-                      class="ProductView_img__P_Ydq"
-                      sizes="100vw"
-                      srcset="
-                        {{ product.featured_image | image_url: width: 640 }} 640w, 
-                        {{ product.featured_image | image_url: width: 750 }} 750w, 
-                        {{ product.featured_image | image_url: width: 828 }} 828w,
-                        {{ product.featured_image | image_url: width: 1080 }} 1080w,
-                        {{ product.featured_image | image_url: width: 1200 }} 1200w,
-                        {{ product.featured_image | image_url: width: 1920 }} 1920w
-                      "
-                      decoding="async"
-                      style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-                    >
-                  </span>
-                </div>
-              </div>
-            </div>
+            {%- endfor -%}
           </div>
         </div>
       </div>
@@ -177,6 +158,40 @@
     {%- endif -%}
   </div>
 </div>
+
+<script>
+  const resizeImgs = Array.from(document.querySelectorAll('.keen-slider__slide'));
+
+  function resizeImg() {
+    let imgWidth = 369
+    const innerWidth = window.innerWidth
+    if (window.innerWidth < 656) {
+      imgWidth = Math.max(parseInt(window.innerWidth) - 81, 369);
+    } else if (window.innerWidth < 768){
+      imgWidth = 576
+    } else if (window.innerWidth < 786) {
+      imgWidth = parseInt(window.innerWidth) - 81
+    } else if (window.innerWidth < 1024){
+      imgWidth = 704
+    } else if (window.innerWidth < 1280) {
+      imgWidth = 478
+    } else {
+      imgWidth = 606
+    }
+    
+    console.log(imgWidth)
+    resizeImgs.forEach(img => {
+      img.style.maxWidth = `${imgWidth}px`
+      img.style.minWidth = `${imgWidth}px`
+    })
+  }
+  
+  window.addEventListener('resize', (event) => {
+    resizeImg();
+  })
+
+  resizeImg();
+</script>
 
 {% schema %}
   {
