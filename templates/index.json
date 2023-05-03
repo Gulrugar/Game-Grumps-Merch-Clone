@@ -12,31 +12,36 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "t-shirts"
+        "collection": "t-shirts",
+        "products_to_show": 4
       }
     },
     "c61696c5-4151-48fa-b187-16a62abeb98e": {
       "type": "featured-collection",
       "settings": {
-        "collection": "pins"
+        "collection": "pins",
+        "products_to_show": 4
       }
     },
     "3dabd729-6d2c-4824-9fef-0934bd472d37": {
       "type": "featured-collection",
       "settings": {
-        "collection": "accessories"
+        "collection": "accessories",
+        "products_to_show": 8
       }
     },
     "970cf820-656c-4856-9169-9c7820e92b26": {
       "type": "featured-collection",
       "settings": {
-        "collection": "hats"
+        "collection": "hats",
+        "products_to_show": 4
       }
     },
     "a8b26a2f-12c4-4108-a121-d31c34400323": {
       "type": "featured-collection",
       "settings": {
-        "collection": "miscellaneous"
+        "collection": "miscellaneous",
+        "products_to_show": 4
       }
     }
   },

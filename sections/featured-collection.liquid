@@ -14,7 +14,7 @@
   </a>
 </div>
 <div class="grid gap-2 sm:gap-4 md:px-0 px-4 pb-4 items-stretch grid-cols-2 md:grid-cols-4 grid-rows-2 md:grid-rows-1">
-  {%- for product in section.settings.collection.products limit: 4 -%}
+  {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
     {% render 'card-product',
       card_product: product,
       lazy_load: true %}
@@ -30,6 +30,15 @@
         "type": "collection",
         "id": "collection",
         "label": "Collection"
+      },
+      {
+        "type": "range",
+        "id": "products_to_show",
+        "min": 4,
+        "max": 8,
+        "step": 2,
+        "label": "Products to Show",
+        "default": 4
       }
     ],
     "presets": [
