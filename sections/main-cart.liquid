@@ -49,7 +49,7 @@
                             {{ item.product.title }}
                           </span>
                         </a>
-                        <div class="font-semibold text-subtle text-lg sm:text-xl">
+                        <div class="font-semibold text-subtle text-lg sm:text-xl flex items-center ml-2">
                           <span>{{ item.final_price | money }}</span>
                         </div>
                       </div>
@@ -86,12 +86,14 @@
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="--darkreader-inline-stroke: currentColor;" data-darkreader-inline-stroke=""></path><path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="--darkreader-inline-stroke: currentColor;" data-darkreader-inline-stroke=""></path></svg>
                           </button>
                         </quantity-input>
-                        <button class="Button_root__G_l9X !py-[10px] !px-4 !bg-interactive hover:opacity-90" type="submit" name="update">Update Qty</button>
-                        <button class="Button_root__G_l9X !py-[10px] !px-4 !bg-interactive hover:opacity-90" type="button" onclick="window.location.href = '{{ item.url_to_remove }}'">
-                          <span class="flex items-center justify-center">
-                            Remove
-                          </span>
-                        </button>
+                        <div class="block">
+                          <button class="Button_root__G_l9X !py-[10px] !px-4 !bg-interactive hover:opacity-90" type="submit" name="update">Update Qty</button>
+                          <button class="Button_root__G_l9X !py-[10px] !px-4 !bg-interactive hover:opacity-90" type="button" onclick="window.location.href = '{{ item.url_to_remove }}'">
+                            <span class="flex items-center justify-center">
+                              Remove
+                            </span>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
