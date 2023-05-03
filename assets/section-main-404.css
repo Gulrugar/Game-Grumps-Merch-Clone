@@ -1,0 +1,14 @@
+.Text_heading__jNwbK {
+  margin-bottom: .5rem;
+  cursor: pointer;
+  padding-top: .25rem;
+  padding-bottom: .5rem;
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: .025em;
+}
+
+.fit {
+  min-height: calc(100vh - 88px);
+}

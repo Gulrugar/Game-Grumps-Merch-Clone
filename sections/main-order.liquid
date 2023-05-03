@@ -1,1 +1,16 @@
-this is main-order.liquid
+{{ 'section-main-404.css' | asset_url | stylesheet_tag }}
+
+<div class="mx-auto container px-4">
+  <div class="mx-auto flex flex-col items-center justify-center fit">
+    <h1 class="Text_heading__jNwbK font-bold">
+      Not Found
+    </h1>
+    <p class="text-xl font-semibold">The page you're looking for does not exist!</p>
+    <a href="/" class="mt-8">
+      <div class="py-2 px-4 text-base lg:text-lg font-bold text-center transition ease-out border-2 rounded-lg text-interactive hover:border-navy hover:bg-navy hover:text-white">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="inline w-4 lg:w-6" style="--darkreader-inline-stroke: currentColor;" data-darkreader-inline-stroke=""><path d="M19 12H5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 19L5 12L12 5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        Continue Shopping
+      </div>
+    </a>
+  </div>
+</div>
