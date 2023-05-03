@@ -1,7 +1,19 @@
-document.querySelector('[aria-controls="radix-3"]').addEventListener('click', (e) => {
-  document.getElementById('radix-3').toggleAttribute('hidden')
-})
+const hamburgerHTML = `
+  <rect y="0.5" width="32" height="4" rx="2"></rect><rect y="10.5" width="32" height="4" rx="2"></rect><rect y="20.5" width="32" height="4" rx="2"></rect>
+`
+const ehksHTML = `
+  <rect x="3.27209" y="23.3995" width="32" height="4" rx="2" transform="rotate(-45 3.27209 23.3995)"></rect><rect x="6.10052" y="0.772095" width="32" height="4" rx="2" transform="rotate(45 6.10052 0.772095)"></rect>
+`
 
+document.querySelector('[aria-controls="radix-3"]').addEventListener('click', (e) => {
+  const headerMenu = document.getElementById('radix-3')
+  const hamburgerBtn = document.querySelector('[aria-controls="radix-3"]')
+  headerMenu.toggleAttribute('hidden')
+
+  headerMenu.hasAttribute('hidden') ?
+    hamburgerBtn.querySelector('svg').innerHTML = hamburgerHTML :
+    hamburgerBtn.querySelector('svg').innerHTML = ehksHTML
+})
 
 // Handle menu hover
 let menuTimeout1;
