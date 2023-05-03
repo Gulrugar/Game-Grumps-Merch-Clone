@@ -132,7 +132,7 @@
           >
             {%- for product in collectionToShow -%}
               {% assign lazy_load = false %}
-              {%- if forloop.index > 2 -%}
+              {%- if forloop.index > 4 -%}
                 {%- assign lazy_load = true -%}
               {%- endif -%}
               {% render 'card-product',
