@@ -90,9 +90,13 @@
         <div class="flex justify-between items-start max-h-full box-border overflow-hidden mb-2 lg:mb-3 md:mx-0 mx-4">
           <div class="transition duration-75 ease-in text-subtle">
             <h2 class="lg:text-3xl text-lg md:text-2xl font-bold text-primary">{{ collection.title }}</h2>
-            <span class="animated fadeIn text-base">
-              {{ 'templates.search.results_products_with_count' | t: count: collection.all_products_count }}
-            </span>
+              <span class="animated fadeIn text-base">
+                {%- if collection.all_products_count > 0 -%}
+                  {{ 'templates.search.results_products_with_count' | t: count: collection.all_products_count }}
+                {%- else -%}
+                  There are no products that match the selected category
+                {%- endif -%}
+              </span>
           </div>
           <div class="ml-auto flex gap-4">
             {%- assign sort_by = collection.sort_by | default: collection.default_sort_by  -%}
@@ -116,7 +120,7 @@
           {%- else -%}
             {% assign collectionToShow = collection.products %}
           {%- endif -%}
-
+          
           <div
             id="product-grid"
             data-id="{{ section.id }}"
