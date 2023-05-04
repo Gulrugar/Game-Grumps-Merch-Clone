@@ -45,7 +45,7 @@ window.addEventListener('resize', (event) => {
 
 imageSlideBtns.forEach(btn => {
   btn.addEventListener('click', (e) => {
-    const positionChange = btn.dataset.direction == 'left' ? -1 : 1
+    const positionChange = btn.dataset.direction == 'left' ? -1 : 1;
     if (slidePosition + positionChange > imageThumbs.length - 1) {
       slidePosition = imageThumbs.length - 1;
     } else if (slidePosition + positionChange >= 0) {
@@ -60,7 +60,7 @@ imageSlideBtns.forEach(btn => {
 
 imageThumbs.forEach(thumb => {
   thumb.addEventListener('click', (event) => {
-    slidePosition = thumb.dataset.position
+    slidePosition = parseInt(thumb.dataset.position)
     highlightSelectedThumb();
     resizeImg();
   })
