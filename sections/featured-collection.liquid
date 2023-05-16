@@ -14,7 +14,12 @@
   </a>
 </div>
 <div class="grid gap-2 sm:gap-4 md:px-0 px-4 pb-4 items-stretch grid-cols-2 md:grid-cols-4 grid-rows-2 md:grid-rows-1">
-  {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+  {%- if section.settings.collection.sort_by == blank -%}
+    {% assign collectionToShow = section.settings.collection.products | reverse %}
+  {%- else -%}
+    {% assign collectionToShow = section.settings.collection.products %}
+  {%- endif -%}
+  {%- for product in collectionToShow limit: section.settings.products_to_show -%}
     {% render 'card-product',
       card_product: product,
       lazy_load: true %}
