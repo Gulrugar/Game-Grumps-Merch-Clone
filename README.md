@@ -11,18 +11,18 @@
 <span style="text-decoration: underline">Store Password: devdrew</span>
 
 
-Drew's Flower Shop is fully featured Shopify store that has all custom templates (except password and gift_card). My intention in creating this store was to fully demonstrate my ability to create a Shopify theme and showcase my understanding of web development.
+Drew's Youtube Merch is a Shopify store specialized in showcasing Youtube Content Creator and Streamer branded merchandise. The intention is to cater to customers that want to buy merchandise that makes them feel like they are identifying with their favorite content creators. This is accomplished by the placement of many kinds of quirky cartoons and images that feel like they are straight from their respective Youtube Channels. Not only that but the website is optimized to be able to navigate quickly and easily through products so that customers can see all of the funny item descriptions and images.
 
-This website is based off the website: [fromyouflowers.com](https://www.fromyouflowers.com/ "From You Flowers") and [Shopify's Theme Dawn](https://github.com/Shopify/dawn "Dawn")
+This website is based off the website: [merch.gamegrumps.com](https://merch.gamegrumps.com/ "Game Grumps Merch")
 
 
 ## Store Preview
 
 ### Home page
 
-The home page features a slideshow and featured collections as well as a featured blog post section. The home page is also fully responsive just like the entire website is.
+The home page contains an assortment of featured collections. The home page is also fully responsive just like the entire website is.
 
-![screenshot-homepage](https://user-images.githubusercontent.com/105955316/236931885-6fcda2a1-f183-4d32-9c0f-870abcc41dba.png)
+![screenshot-homepage](https://github.com/Gulrugar/Game-Grumps-Merch-Clone/assets/105955316/6d3ffd40-4524-4397-b352-e99ad9771097)
 
 In the header you'll notice a **predictive search bar**. The Javascript for the predictive search is based off of the predictive search implemented in dawn and appearance of the content is my own design inspired by the fromyouflower.com website.
 
