@@ -4,7 +4,7 @@
 <div class="relative flex-scroll overflow-hidden px-4 pb-4 md:px-0">
   <div class="keen-slider rounded-2xl transform webkit-border">
     <div class="keen-slider__slide">
-      <a href="{{ section.settings.url  }}" class="FeaturedSlider_root__R_R0C">
+      <a href="{{ section.settings.collection.url  }}" class="FeaturedSlider_root__R_R0C">
         <div class="FeaturedSlider_imageContainer__D_WkQ md:hidden">
           <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: relative;">
             <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: {{ 1 | divided_by: section.settings.image_mobile.aspect_ratio | times: 100 }}% 0px 0px;"></span>
@@ -66,10 +66,9 @@
         "label": "Banner Image mobile"
       },
       {
-        "type": "url",
-        "id": "url",
-        "label": "Url",
-        "default": "/"
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
       }
     ]
   }

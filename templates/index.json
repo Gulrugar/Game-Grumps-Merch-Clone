@@ -6,7 +6,7 @@
       "settings": {
         "image_desktop": "shopify:\/\/shop_images\/1677610132-rpgsbannerw3_default.webp",
         "image_mobile": "shopify:\/\/shop_images\/1677610138-rpgsbannerw3_mobile.webp",
-        "url": "https:\/\/youtube.com"
+        "collection": "pins"
       }
     },
     "featured-collection": {
