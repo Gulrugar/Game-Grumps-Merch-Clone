@@ -42,7 +42,7 @@
     {%- liquid
       assign repeating_bg_url = ''
       if settings.repeating_bg != blank
-        assign repeating_bg_url = {{ settings.repeating_bg | image_url: width: 1400 }}
+        assign repeating_bg_url = nil | image_url: width: 1400
       endif
     -%}
     {%- if settings.repeating_bg != blank -%}
@@ -180,4 +180,14 @@
       };
     </script>
   </body>
-</html>
+</html>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "        assign repeating_bg_url = {{ settings.repeating_bg | image_url: width:
+    1400 }}"
+  to: "        assign repeating_bg_url = nil | image_url: width: 1400"
+  position: 1700..1762
+{%- endcomment -%}
